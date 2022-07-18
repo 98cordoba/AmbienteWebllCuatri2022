@@ -3,3 +3,5 @@ CREATE TABLE `consultoriomedico`.`usuarios` (`idUsuario` INT NOT NULL AUTO_INCRE
 INSERT INTO `usuarios` (`idUsuario`, `usuario`, `contraseñaUsuario`, `nombreUsuario`, `tipoUsuario`) VALUES (NULL, 'admin', SHA1('123'), 'Joseph', '1')
 
 INSERT INTO `usuarios` (`idUsuario`, `usuario`, `contraseñaUsuario`, `nombreUsuario`, `tipoUsuario`) VALUES (NULL, 'usuario', SHA1('123'), 'Donnkan', '2')
+
+--comentario
