@@ -155,7 +155,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php #llenar tabla
+                                        <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
                                                 <td><?php echo $row['usuario']  ?></td>
