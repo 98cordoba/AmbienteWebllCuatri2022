@@ -10,6 +10,9 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 
+INSERT INTO `consultoriomedico`.`tipousuario` (idtipoUsuario,tipoDeUsuario) VALUES (1,'Administrador');
+INSERT INTO `consultoriomedico`.`tipousuario` (idtipoUsuario,tipoDeUsuario) VALUES (2,'Consultor');
+
 
 CREATE TABLE `consultoriomedico`.`usuarios` (
   idUsuarios INT NOT NULL AUTO_INCREMENT,
@@ -21,6 +24,9 @@ CREATE TABLE `consultoriomedico`.`usuarios` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
+
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (2,'consul','123',2);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (2,'consul','123',2);
 
 CREATE TABLE `consultoriomedico`.`doctor` (
   idDoctor INT NOT NULL AUTO_INCREMENT,
