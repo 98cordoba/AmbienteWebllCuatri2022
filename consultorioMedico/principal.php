@@ -1,10 +1,11 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
- if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
     header("Location: index.php");
  }
  $nombreUsuario = $_SESSION['nombre'];
  $tipoUsuario = $_SESSION['tipoUsuario'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark"> <!--Barra de navegacion -->
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Consultorio Medico</a>
+            <a class="navbar-brand ps-3" href="principal.php">Consultorio Medico</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <ul class="navbar-nav ms-auto ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -96,9 +97,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Citas
                             </a>
-                            <a class="nav-link" href="tabla.php">
+                            <a class="nav-link" href="tablaUsuarios.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Control de tablas
+                                Tabla de Usuarios
                             </a>
                         </div>
                     </div>
@@ -118,7 +119,7 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
+                                    <div class="card-body">Pacientes</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -126,8 +127,8 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Doctores</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -135,8 +136,8 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Citas</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -144,10 +145,10 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Usuarios</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="tablaUsuarios.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

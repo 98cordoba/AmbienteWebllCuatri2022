@@ -1,7 +1,7 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
  require 'conexion.php'; #Conexion a la BD
- if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
     header("Location: index.php");
  }
  $idUsuario = $_SESSION['idUsuario'];
@@ -22,7 +22,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Tables - SB Admin</title>
+        <title>Tables</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark"> <!--Barra de navegacion -->
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Consultorio Medico</a>
+            <a class="navbar-brand ps-3" href="principal.php">Consultorio Medico</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <ul class="navbar-nav ms-auto ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -119,22 +119,20 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tables</h1>
+                        <h1 class="mt-4">Usuarios</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="principal.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tables</li>
+                            <li class="breadcrumb-item active">Tabla de usuarios</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
+                               <p>En esta tabla se detallan los usuarios registrados en el sistema. </p>
                             </div>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                Usuarios del Sistema
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla usuarios -->
                                 <table id="datatablesSimple">
@@ -142,7 +140,6 @@
                                         <tr>
                                             <th>Usuario</th>
                                             <th>Password</th>
-                                            <th>Nombre</th>
                                             <th>Tipo Usuario</th>
                                         </tr>
                                     </thead>
@@ -150,7 +147,6 @@
                                         <tr>
                                             <th>Usuario</th>
                                             <th>Password</th>
-                                            <th>Nombre</th>
                                             <th>Tipo Usuario</th>
                                         </tr>
                                     </tfoot>
@@ -158,10 +154,15 @@
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
-                                                <td><?php echo $row['usuario']  ?></td>
-                                                <td><?php echo $row['contraseña']  ?></td>
-                                                <td><?php echo $row['nombre']  ?></td>
-                                                <td><?php echo $row['tipoUsuario']  ?></td>
+                                                <td><?php echo $row['nombreUsuario']  ?></td>
+                                                <td><?php echo $row['passwordUsuario']  ?></td>
+                                                <td><?php 
+                                                if($row['tipoUsuario'] == 1){
+                                                echo  "Administrador"; 
+                                                }elseif($row['tipoUsuario'] == 2) {
+                                                    echo  "Consultor";
+                                                }
+                                                ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
