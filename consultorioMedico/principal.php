@@ -109,7 +109,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Doctores
                             </a>
-                            <a class="nav-link" href="tablaUsuarios.php">
+                            <a class="nav-link" href="tablaCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Citas
                             </a>
