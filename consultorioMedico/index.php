@@ -4,16 +4,16 @@
  if($_POST){ #Si se envio el formulario
     $usuario = $_POST['usuario']; #atributo name del form
     $contraseña = $_POST['contraseñaUsuario']; #atributo name del form
-    $consultaUsuario = "SELECT idUsuario, contraseñaUsuario, nombreUsuario, tipoUsuario FROM usuarios WHERE usuario='$usuario'"; #Pregunta por el usuario
+    $consultaUsuario = "SELECT idUsuarios, passwordUsuario, nombreUsuario, tipoUsuario FROM usuarios WHERE nombreUsuario='$usuario'"; #Pregunta por el usuario
     $resultado = $mysqli->query($consultaUsuario); #Almacena el usuario
     $num = $resultado->num_rows; #Preguntar si el resultado esta vacio
     if($num>0){
         $row = $resultado->fetch_assoc();
-        $password_bd = $row['contraseñaUsuario']; #Contraseña cifrada almacenada en la BD
-        $pass_c = sha1($contraseña); #cifrado de la contraseña
-        if($password_bd == $pass_c){ #Comparacion de contraseñas
+        $password_bd = $row['passwordUsuario']; #Contraseña cifrada almacenada en la BD
+       # $pass_c = $contraseña; #cifrado de la contraseña
+        if($password_bd == $contraseña){ #Comparacion de contraseñas
             #almacenamiento de datos en variables
-            $_SESSION['idUsuario'] = $row['idUsuario'];
+            $_SESSION['idUsuarios'] = $row['idUsuarios'];
             $_SESSION['nombreUsuario'] = $row['nombreUsuario'];
             $_SESSION['tipoUsuario'] = $row['tipoUsuario'];
             header("Location: principal.php"); #Redireccionamiento a la pantalla principal

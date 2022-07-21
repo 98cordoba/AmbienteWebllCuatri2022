@@ -11,7 +11,7 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $consultaSELECT = "SELECT * FROM usuarios $where";
+ $consultaSELECT = "SELECT * FROM cita $where";
  $resultado = $mysqli->query($consultaSELECT); #Consulta de la tabla usuarios
 ?>
 <!DOCTYPE html>
@@ -131,50 +131,44 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Usuarios</h1>
+                        <h1 class="mt-4">Citas</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="principal.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tabla de usuarios</li>
+                            <li class="breadcrumb-item active">Tabla de Citas medicas</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                               <p>En esta tabla se detallan los usuarios registrados en el sistema.</p>
+                               <p>En esta tabla se detallan las citas registradas en el sistema de este centro medico.</p>
                             </div>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Usuarios del Sistema
+                                Citas medicas
                             </div>
-                            <div class="card-body"> <!-- Contenido Tabla usuarios -->
+                            <div class="card-body"> <!-- Contenido Tabla Pacientes -->
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Usuario</th>
-                                            <th>Password</th>
-                                            <th>Tipo Usuario</th>
+                                            <th>Expediente</th>
+                                            <th>Fecha de la cita</th>
+                                            <th>Descripcion</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Usuario</th>
-                                            <th>Password</th>
-                                            <th>Tipo Usuario</th>
+                                            <th>Expediente</th>
+                                            <th>Fecha de la cita</th>
+                                            <th>Descripcion</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
-                                                <td><?php echo $row['nombreUsuario']  ?></td>
-                                                <td><?php echo $row['passwordUsuario']  ?></td>
-                                                <td><?php  #Pensar en agregar Switch
-                                                if($row['tipoUsuario'] == 1){
-                                                echo  "Administrador"; 
-                                                }elseif($row['tipoUsuario'] == 2) {
-                                                    echo  "Consultor";
-                                                }
-                                                ?></td>
+                                                <td><?php echo $row['idCita']  ?></td>
+                                                <td><?php echo $row['fechaCita']  ?></td>
+                                                <td><?php echo $row['descripcion']  ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

@@ -92,7 +92,7 @@
                                 </nav>
                             </div>
                             <?php } ?>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Tablas</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Citas
@@ -100,6 +100,18 @@
                             <a class="nav-link" href="tablaUsuarios.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Usuarios
+                            </a>
+                            <a class="nav-link" href="tablaPacientes.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tabla de Pacientes
+                            </a>
+                            <a class="nav-link" href="tablaDoctores.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tabla de Doctores
+                            </a>
+                            <a class="nav-link" href="tablaUsuarios.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tabla de Citas
                             </a>
                         </div>
                     </div>
