@@ -10,8 +10,9 @@
     $where = "";
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
- }
- $consultaSELECT = "SELECT * FROM cita $where";
+ } #Utilizar el where para que el doctor unicamente pueda ver sus citas***
+ $consultaSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
+ JOIN doctor d on cm.doctorAsignado = d.idDoctor";
  $resultado = $mysqli->query($consultaSELECT); #Consulta de la tabla usuarios
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Tables</title>
+        <title>Citas Medicas</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -153,6 +154,7 @@
                                             <th>Expediente</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
+                                            <th>Doctor Asignado</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -160,6 +162,7 @@
                                             <th>Expediente</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
+                                            <th>Doctor Asignado</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -169,6 +172,7 @@
                                                 <td><?php echo $row['idCita']  ?></td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
+                                                <td><?php echo $row['nombreDoctor']  ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
