@@ -11,7 +11,8 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $consultaSELECT = "SELECT * FROM usuarios $where";
+ $consultaSELECT = "SELECT u.idUsuarios, u.nombreUsuario, tu.tipoDeUsuario FROM usuarios u
+ JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario";
  $resultado = $mysqli->query($consultaSELECT); #Consulta de la tabla usuarios
 ?>
 <!DOCTYPE html>
@@ -166,15 +167,10 @@
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
+                                                <td><?php echo $row['idUsuarios']  ?></td>
                                                 <td><?php echo $row['nombreUsuario']  ?></td>
-                                                <td><?php echo $row['passwordUsuario']  ?></td>
-                                                <td><?php  #Pensar en agregar Switch
-                                                if($row['tipoUsuario'] == 1){
-                                                echo  "Administrador"; 
-                                                }elseif($row['tipoUsuario'] == 2) {
-                                                    echo  "Consultor";
-                                                }
-                                                ?></td>
+                                                <td><?php echo $row['tipoDeUsuario']  ?></td>
+                                                
                                             </tr>
                                             <?php } ?>
                                     </tbody>
