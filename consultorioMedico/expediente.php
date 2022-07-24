@@ -11,9 +11,11 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
- JOIN doctor d on cm.doctorAsignado = d.idDoctor";
- $resultado = $mysqli->query($tCitasSELECT); #Consulta de la tabla Citas
+ $expedienteSELECT = "SELECT ex.idExpediente, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor  FROM expediente ex
+ JOIN cita cm on ex.exConsulta = cm.idCita
+ JOIN pacientes p on ex.exPaciente = p.idPaciente
+ JOIN doctor d on ex.exDoctor= d.idDoctor";
+ $resultado = $mysqli->query($expedienteSELECT); #Consulta de la tabla Citas
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Citas Medicas</title>
+        <title>Expedientes</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -145,47 +147,50 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Citas</h1>
+                        <h1 class="mt-4">Expedientes</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="principal.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tabla de Citas medicas</li>
+                            <li class="breadcrumb-item active">Tabla de Expedientes medicos</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                               <p>En esta tabla se detallan las citas registradas en el sistema de este centro medico.</p>
+                               <p>En esta tabla se detallan los expedientes registradas en el sistema de este centro medico.</p>
                             </div>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Citas medicas
+                                Expedientes
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla Pacientes -->
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Expediente</th>
+                                            <th>Numero de Expediente</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
-                                            <th>Doctor Asignado</th>
+                                            <th>Datos del paciente</th>
+                                            <th>Datos del Doctor</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Expediente</th>
+                                            <th>Numero de Expediente</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
-                                            <th>Doctor Asignado</th>
+                                            <th>Datos del paciente</th>
+                                            <th>Datos del Doctor</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
-                                                <td><?php echo $row['idCita']  ?></td>
+                                                <td><?php echo $row['idExpediente']  ?></td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
-                                                <td><?php echo $row['nombreDoctor']  ?></td>
+                                                <td><?php echo $row['nombrePaciente']."<br> ".$row['apellidosPaciente']."<br> Cedula: ".$row['cedulaPaciente']  ?></td>
+                                                <td><?php echo $row['nombreDoctor']."<br> ".$row['apellidosDoctor']."<br> Cedula: ".$row['cedulaDoctor']  ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

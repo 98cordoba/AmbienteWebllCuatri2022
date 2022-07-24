@@ -11,9 +11,9 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $tDoctorSELECT = "SELECT  d.nombreDoctor, d.cedulaDoctor, d.telefonoDoctor, d.correoDoctor, d.especialidad, tu.tipoDeUsuario 
+ $tDoctorSELECT = "SELECT  d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor, d.telefonoDoctor, d.correoDoctor, d.especialidad, tu.tipoDeUsuario 
  FROM doctor d JOIN tipousuario tu on d.tipoUsuario = tu.idtipoUsuario";
- $resultado = $mysqli->query($tDoctorSELECT); #Consulta de la tabla usuarios
+ $resultado = $mysqli->query($tDoctorSELECT); #Consulta de la tabla Doctores
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -164,7 +164,8 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Doctor</th>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
                                             <th>Identificacion</th>
                                             <th>Contacto</th>
                                             <th>Especialidad</th>
@@ -173,7 +174,8 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Doctor</th>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
                                             <th>Identificacion</th>
                                             <th>Contacto</th>
                                             <th>Especialidad</th>
@@ -185,6 +187,7 @@
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
                                                 <td><?php echo $row['nombreDoctor']  ?></td>
+                                                <td><?php echo $row['apellidosDoctor']  ?></td>
                                                 <td><?php echo $row['cedulaDoctor']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoDoctor']."<br>Correo: ".$row['correoDoctor']  ?></td>
                                                 <td><?php echo $row['especialidad']  ?></td>

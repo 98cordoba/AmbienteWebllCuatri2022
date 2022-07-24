@@ -11,9 +11,9 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $consultaSELECT = "SELECT u.idUsuarios, u.nombreUsuario, tu.tipoDeUsuario FROM usuarios u
+ $tUsuariosSELECT = "SELECT u.idUsuarios, u.nombreUsuario, tu.tipoDeUsuario FROM usuarios u
  JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario";
- $resultado = $mysqli->query($consultaSELECT); #Consulta de la tabla usuarios
+ $resultado = $mysqli->query($tUsuariosSELECT); #Consulta de la tabla usuarios
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,14 +165,14 @@
                                     <thead>
                                         <tr>
                                             <th>Usuario</th>
-                                            <th>Password</th>
+                                            <th>Nombre de usuario</th>
                                             <th>Tipo Usuario</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Usuario</th>
-                                            <th>Password</th>
+                                            <th>Nombre de usuario</th>
                                             <th>Tipo Usuario</th>
                                         </tr>
                                     </tfoot>

@@ -11,9 +11,9 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $consultaSELECT = "SELECT  p.nombrePaciente, p.cedulaPaciente, p.fechaNacimiento, p.telefonoPaciente, p.correoPaciente, c.fechaCita, c.idCita 
+ $tPacientesSELECT = "SELECT  p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, p.fechaNacimiento, p.telefonoPaciente, p.correoPaciente, c.fechaCita, c.idCita 
  FROM pacientes p JOIN cita c on p.citaPaciente = c.idCita";
- $resultado = $mysqli->query($consultaSELECT); #Consulta de la tabla usuarios
+ $resultado = $mysqli->query($tPacientesSELECT); #Consulta de la tabla Pacientes
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -164,7 +164,8 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Paciente</th>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
                                             <th>Identificacion</th>
                                             <th>Fecha de nacimiento</th>
                                             <th>Contacto</th>
@@ -174,7 +175,8 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Paciente</th>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
                                             <th>Identificacion</th>
                                             <th>Fecha de nacimiento</th>
                                             <th>Contacto</th>
@@ -187,11 +189,12 @@
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
                                                 <td><?php echo $row['nombrePaciente']  ?></td>
+                                                <td><?php echo $row['apellidosPaciente']  ?></td>
                                                 <td><?php echo $row['cedulaPaciente']  ?></td>
                                                 <td><?php echo $row['fechaNacimiento']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoPaciente']."<br>Correo: ".$row['correoPaciente']  ?></td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
-                                                <td><?php echo $row['idCita']  ?></td>
+                                                <td><?php echo "Numero: ".$row['idCita']."<br> <a href='expediente.php' >Ver expediente</a>"  ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
