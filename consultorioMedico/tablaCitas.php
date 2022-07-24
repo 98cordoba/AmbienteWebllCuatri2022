@@ -10,7 +10,7 @@
     $where = "";
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
- } #Utilizar el where para que el doctor unicamente pueda ver sus citas***
+ }
  $consultaSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
  JOIN doctor d on cm.doctorAsignado = d.idDoctor";
  $resultado = $mysqli->query($consultaSELECT); #Consulta de la tabla usuarios
@@ -46,26 +46,39 @@
             </ul>
         </nav>
         <div id="layoutSidenav">
-        <div id="layoutSidenav_nav"> <!--Menu lateral-->
+            <div id="layoutSidenav_nav"> <!--Menu lateral-->
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Estadisticas</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="principal.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
                             <?php if($tipoUsuario == 1){ ?>
                             <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePacientes" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Pacientes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapsePacientes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                    <a class="nav-link" href="registrarPaciente.php">Agregar Paciente</a>
+                                    <a class="nav-link" href="registrarPaciente.php">Editar Paciente</a>
+                                    <a class="nav-link" href="registrarPaciente.php">Eliminar Paciente</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctor" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Doctores
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseDoctor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="registrarDoctor.php">Agregar Doctor</a>
+                                    <a class="nav-link" href="registrarDoctor.php">Editar Doctor</a>
+                                    <a class="nav-link" href="registrarDoctor.php">Eliminar Doctor</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -94,7 +107,7 @@
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="./errores/401.html">401 Page</a>
                                             <a class="nav-link" href="./errores/404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
+                                            <a class="nav-link" href="./errores/500.html">500 Page</a>
                                         </nav>
                                     </div>
                                 </nav>
