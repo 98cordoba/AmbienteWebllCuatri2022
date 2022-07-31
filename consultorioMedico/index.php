@@ -26,11 +26,11 @@
                                     <div class="card-body">
                                     <form method="POST" action="verificarUsuario.php">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputUsuario" name="usuario" type="text" placeholder="Usuario" />
+                                                <input class="form-control" id="inputUsuario" name="usuario" type="text" placeholder="Usuario" required/>
                                                 <label for="inputUsuario">Usuario</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="contraseñaUsuario" type="password" placeholder="Password" />
+                                                <input class="form-control" id="inputPassword" name="contraseñaUsuario" type="password" placeholder="Password" required/>
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <div class="form-check mb-3">
