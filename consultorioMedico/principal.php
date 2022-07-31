@@ -3,9 +3,9 @@
  if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
     header("Location: index.php");
  }
- $nombreUsuario = $_SESSION['nombre'];
+ #Asignacion de la sesion en Variables
+ $nombreUsuario = $_SESSION['nombreUsuario'];
  $tipoUsuario = $_SESSION['tipoUsuario'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +75,7 @@
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                MedicamentosPrueba
+                                Medicamentos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">

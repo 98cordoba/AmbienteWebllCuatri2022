@@ -1,14 +1,11 @@
 <?php
-
-require 'conexion.php';
 session_start();
+require 'conexion.php';
 if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
   header("Location: index.php");
 }
-$idUsuario = $_SESSION['idUsuario'];
+$idUsuario = $_SESSION['idUsuario']; #
 $tipoUsuario = $_SESSION['tipoUsuario'];
-
-
 
 ?>
 <!DOCTYPE html>
@@ -103,9 +100,10 @@ function InsertaDatos($pNombreP, $pApellidosP, $pCedulaP, $pFechaNacimientoP, $p
   $response = "";
   //$conn = Conecta();
   // prepare and bind
-  $stmt = $mysqli->prepare("INSERT INTO pacientes (nombrePaciente, nombrePaciente, fechaNacimiento, telefonoPaciente, correoPaciente,citaPaciente) VALUES (?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param("siiis", $inombreP, $iapellidosP, $icedulaP, $ifechaNacimientoP, $itelefonoP, $icorreoP);
-
+  #Revisar Variable mysqli que esta en conexion.php
+  $stmt = $mysqli->prepare("INSERT INTO pacientes (idPaciente, nombrePaciente, apellidosPaciente, cedulaPaciente, fechaNacimiento, telefonoPaciente, correoPaciente,citaPaciente) VALUES (?, ?, ?, ?, ?, ?,?,?)");
+  $stmt->bind_param("siiis", $inombreP, $iapellidosP, $icedulaP, $ifechaNacimientoP, $itelefonoP, $icorreoP,1);
+ 
   // set parameters and execute
   $inombreP = $pNombreP;
   $iapellidosP = $pApellidosP;

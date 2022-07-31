@@ -1,29 +1,6 @@
 <?php
  require "conexion.php"; #Conexion a la BD
  session_start(); #Necesario para utilizar sesiones
- if($_POST){ #Si se envio el formulario
-    $usuario = $_POST['usuario']; #atributo name del form
-    $contraseña = $_POST['contraseñaUsuario']; #atributo name del form
-    $consultaUsuario = "SELECT idUsuarios, passwordUsuario, nombreUsuario, tipoUsuario FROM usuarios WHERE nombreUsuario='$usuario'"; #Pregunta por el usuario
-    $resultado = $mysqli->query($consultaUsuario); #Almacena el usuario
-    $num = $resultado->num_rows; #Preguntar si el resultado esta vacio
-    if($num>0){
-        $row = $resultado->fetch_assoc();
-        $password_bd = $row['passwordUsuario']; #Contraseña cifrada almacenada en la BD
-       # $pass_c = $contraseña; #cifrado de la contraseña
-        if($password_bd == $contraseña){ #Comparacion de contraseñas
-            #almacenamiento de datos en variables
-            $_SESSION['idUsuarios'] = $row['idUsuarios'];
-            $_SESSION['nombreUsuario'] = $row['nombreUsuario'];
-            $_SESSION['tipoUsuario'] = $row['tipoUsuario'];
-            header("Location: principal.php"); #Redireccionamiento a la pantalla principal
-        }else{
-            echo "contraseña no coincide";
-        }
-    }else{
-        echo "No existe usuario";
-    }
- }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +24,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <form method="POST" action="verificarUsuario.php">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputUsuario" name="usuario" type="text" placeholder="Usuario" />
                                                 <label for="inputUsuario">Usuario</label>

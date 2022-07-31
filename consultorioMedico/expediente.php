@@ -1,4 +1,4 @@
-<?php
+ <?php
  session_start(); #Necesario para utilizar sesiones
  require 'conexion.php'; #Conexion a la BD
  if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
@@ -183,7 +183,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php
+                                        <?php 
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
                                                 <td><?php echo $row['idExpediente']  ?></td>

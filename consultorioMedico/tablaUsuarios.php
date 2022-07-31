@@ -14,7 +14,7 @@
  $tUsuariosSELECT = "SELECT u.idUsuarios, u.nombreUsuario, tu.tipoDeUsuario FROM usuarios u
  JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario";
  $resultado = $mysqli->query($tUsuariosSELECT); #Consulta de la tabla usuarios
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
