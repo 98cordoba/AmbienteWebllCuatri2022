@@ -39,7 +39,7 @@
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="password.html">Forgot Password?</a>
-                                                <button type="submit" class="btn btn-primary">Login</button>                                                
+                                                <button type="submit" class="btn btn-primary" onclick="return validarIngreso();">Ingresar</button>                                                
                                             </div>
                                         </form>
                                     </div>
@@ -69,5 +69,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/validaciones.js"></script>
     </body>
 </html>
