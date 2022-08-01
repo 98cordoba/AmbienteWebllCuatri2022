@@ -4,7 +4,6 @@
     header("Location: index.php");
  }
  #Asignacion de la sesion en Variables
- $nombreUsuario = $_SESSION['nombreUsuario'];
  $tipoUsuario = $_SESSION['tipoUsuario'];
 ?>
 <!DOCTYPE html>

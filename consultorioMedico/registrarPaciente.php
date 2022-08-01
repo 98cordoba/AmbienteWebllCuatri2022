@@ -1,29 +1,11 @@
 <?php
  require "conexion.php"; #Conexion a la BD
- session_start(); #Necesario para utilizar sesiones
- if($_POST){ #Si se envio el formulario
-    $usuario = $_POST['usuario']; #atributo name del form
-    $contraseña = $_POST['contraseñaUsuario']; #atributo name del form
-    $consultaUsuario = "SELECT idUsuario, contraseñaUsuario, nombreUsuario, tipoUsuario FROM usuarios WHERE usuario='$usuario'"; #Pregunta por el usuario
-    $resultado = $mysqli->query($consultaUsuario); #Almacena el usuario
-    $num = $resultado->num_rows; #Preguntar si el resultado esta vacio
-    if($num>0){
-        $row = $resultado->fetch_assoc();
-        $password_bd = $row['contraseñaUsuario']; #Contraseña cifrada almacenada en la BD
-        #$pass_c = $contraseña; #cifrado de la contraseña
-        if($password_bd == $contraseña){ #Comparacion de contraseñas
-            #almacenamiento de datos en variables
-            $_SESSION['idUsuario'] = $row['idUsuario'];
-            $_SESSION['nombreUsuario'] = $row['nombreUsuario'];
-            $_SESSION['tipoUsuario'] = $row['tipoUsuario'];
-            header("Location: principal.php"); #Redireccionamiento a la pantalla principal
-        }else{
-            echo "contraseña no coincide";
-        }
-    }else{
-        echo "No existe usuario";
-    }
+ session_start(); #Necesario para utilizar sesiones 
+ if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+    header("Location: index.php");
  }
+ #Asignacion de la sesion en Variables
+ $tipoUsuario = $_SESSION['tipoUsuario'];
 ?>
 
 <!DOCTYPE html>
