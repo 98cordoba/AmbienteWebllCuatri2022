@@ -27,12 +27,6 @@
                                         <form method="Post" action="insertUsuario.php">
                                             <div class="row mb-3">    
                                                 <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="usuarioID"/>
-                                                        <label for="inputFirstName">Id Usuario</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
                                                     <div class="form-floating">
                                                         <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="usuarioNombre"/>
                                                         <label for="inputLastName">Nombre de usuario</label>

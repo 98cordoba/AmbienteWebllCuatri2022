@@ -9,11 +9,11 @@ $doctorCorreo = $_POST['doctorCorreo'];
 $doctorEspecialidad = $_POST['doctorEspecialidad'];
 $doctorTpUsuario = $_POST['doctorTpUsuario'];
 
-
-$consultaIDoctor = "INSERT INTO doctor (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario) VALUES (?,?,?,?,?,?,?,?)";
+ 
+$consultaIDoctor = "INSERT INTO doctor (nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario) VALUES (?,?,?,?,?,?,?)";
 
 $consultaPreparada =  mysqli_prepare($mysqli,$consultaIDoctor); #Se prepara la consulta ***[Devuelve un objeto mysqli_stmt]***
-$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"issiissi",$doctorID,$doctorNombre,$doctorApellidos,$doctorCedula,$doctorTelefono,$doctorCorreo,$doctorEspecialidad,$doctorTpUsuario); #Parametro enviado en el WHERE (Objeto mysqli_stmt,Tipo de dato por consultar,Dato consultado)
+$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"ssiissi",$doctorNombre,$doctorApellidos,$doctorCedula,$doctorTelefono,$doctorCorreo,$doctorEspecialidad,$doctorTpUsuario); #Parametro enviado en el WHERE (Objeto mysqli_stmt,Tipo de dato por consultar,Dato consultado)
 $estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consulta   ***[Devuelve TRUE/FALSE]***
     if($estadoConsulta==true){ #TRUE = la consulta se ejecuto
       // $estadoConsulta = mysqli_stmt_bind_result($consultaPreparada,$idUser,$Username,$password_bd,$tUsuario); # Asociar las variables

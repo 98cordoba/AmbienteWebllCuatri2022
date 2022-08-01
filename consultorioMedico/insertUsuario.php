@@ -1,15 +1,11 @@
 <?php
 require "conexion.php"; #Conexion a la BD
-$usuarioID = $_POST['usuarioID'];
 $usuarioNombre = $_POST['usuarioNombre'];
 $passwordUsuario = $_POST['passwordUsuario'];
 $tipoUsuario = $_POST['tipoUsuario'];
-
-
-$consultaIUsuario = "INSERT INTO usuarios (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (?,?,?,?)";
-
+$consultaIUsuario = "INSERT INTO usuarios (nombreUsuario,passwordUsuario,tipoUsuario) VALUES (?,?,?)";
 $consultaPreparada =  mysqli_prepare($mysqli,$consultaIUsuario); #Se prepara la consulta ***[Devuelve un objeto mysqli_stmt]***
-$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"issi",$usuarioID,$usuarioNombre,$passwordUsuario,$tipoUsuario); #Parametro enviado en el WHERE (Objeto mysqli_stmt,Tipo de dato por consultar,Dato consultado)
+$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"ssi",$usuarioNombre,$passwordUsuario,$tipoUsuario); #Parametro enviado en el WHERE (Objeto mysqli_stmt,Tipo de dato por consultar,Dato consultado)
 $estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consulta   ***[Devuelve TRUE/FALSE]***
     if($estadoConsulta==true){ #TRUE = la consulta se ejecuto
       // $estadoConsulta = mysqli_stmt_bind_result($consultaPreparada,$idUser,$Username,$password_bd,$tUsuario); # Asociar las variables

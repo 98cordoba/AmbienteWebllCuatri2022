@@ -30,17 +30,17 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Nuevo paciente</h3></div>
                                     <div class="card-body">
-                                        <form method="Post" action="procesamientoServer.php">
+                                        <form method="Post" action="insertPaciente.php">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="nombrePaciente" />
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="pacienteNombre" />
                                                         <label for="inputFirstName">Nombre del Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="apellidoPaciente"/>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="pacienteApellidos"/>
                                                         <label for="inputLastName">Apellidos del paciente</label>
                                                     </div>
                                                 </div>
@@ -48,25 +48,25 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="cedulaPaciente"/>
+                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="pacienteCedula"/>
                                                         <label for="inputFirstName">Cedula del Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="date" placeholder="Enter your last name" name="fechaPaciente"/>
+                                                        <input class="form-control" id="inputLastName" type="date" placeholder="Enter your last name" name="pacienteFechaN" />
                                                         <label for="inputLastName">Fecha de Nacimiento</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="telefonoPaciente"/>
+                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="pacienteTelefono"/>
                                                         <label for="inputFirstName">Numero Telefonico</label>
                                                     </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="correoPaciente" />
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="pacienteCorreo" />
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="mt-4 mb-0">

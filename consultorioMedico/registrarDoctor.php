@@ -30,15 +30,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Crear nuevo Doctor</h3></div>
                                     <div class="card-body">
-                                        <form method="Post" action="insertDoctor.php">
-                                        <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="doctorID"/>
-                                                        <label for="inputFirstName">ID</label>
-                                                    </div>
-                                                </div>   
-                                            </div>    
+                                        <form method="Post" action="insertDoctor.php">    
                                         <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
