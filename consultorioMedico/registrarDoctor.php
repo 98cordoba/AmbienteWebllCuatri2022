@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Registrar Paciente</title>
+        <title>Registrar Doctores</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -93,7 +93,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="tablaDoctores .php">Buscar un Doctor</a></div>
+                                        <div class="small"><a href="tablaDoctores.php">Buscar un Doctor</a></div>
                                     </div>
                                 </div>
                             </div>

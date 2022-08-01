@@ -1,6 +1,5 @@
 <?php
  require "conexion.php"; #Conexion a la BD
- session_start(); #Necesario para utilizar sesiones
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Registrase</a></div>
+                                        <div class="small"><a href="nuevoUsuario.php">Registrase</a></div>
                                     </div>
                                 </div>
                             </div>
