@@ -3,17 +3,13 @@ function validarIngreso() {
     try {
         var user = document.getElementById('inputUsuario').value;
         var passw = document.getElementById('inputPassword').value;
-        if (user == null || user.length == 0 || /^\s+$/.test(user)) {
-            
-            alert("Usuario incompleto");
-            return retorno;
+        if ((user == null || user.length == 0 || /^\s+$/.test(user))||(passw == null || passw.length == 0 || /^\s+$/.test(passw))) {           
+            alert("Este formulario cuenta con campos obligatorios \n Por favor verifique sus datos");
+            location.reload();
+            return retorno;  
+        }else{
+            retorno = true;
         }
-        if (passw == null || passw.length == 0 || /^\s+$/.test(passw)) {
-            
-            alert("Contraseña incompleto");
-            return retorno;
-        }
-        
     } catch (error) {
         retorno = false;
     }

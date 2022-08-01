@@ -22,29 +22,25 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Inicio de sesion</h3></div>
                                     <div class="card-body">
                                     <form method="POST" action="verificarUsuario.php">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputUsuario" name="usuario" type="text" placeholder="Usuario" required/>
+                                                <input class="form-control" id="inputUsuario" name="usuario" type="text" placeholder="Usuario"/> <!-- si se utiliza required no es necesario validacion JS -->
                                                 <label for="inputUsuario">Usuario</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="contraseñaUsuario" type="password" placeholder="Password" required/>
-                                                <label for="inputPassword">Password</label>
-                                            </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
+                                                <input class="form-control" id="inputPassword" name="contraseñaUsuario" type="password" placeholder="Password"/> <!-- si se utiliza required no es necesario validacion JS -->
+                                                <label for="inputPassword">Contraseña</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <a class="small" href="password.html">Olvido su contraseña?</a>
                                                 <button type="submit" class="btn btn-primary" onclick="return validarIngreso();">Ingresar</button>                                                
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.html">Registrase</a></div>
                                     </div>
                                 </div>
                             </div>
