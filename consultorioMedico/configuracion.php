@@ -12,11 +12,12 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="keywords" content="Medicos, consultorios, medicina, hospitales">
+        <meta name="description" content="Consultorio medico"/>
+        <meta name="author" content="Ufidelitas"/>
         <title>Consultorio</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="./css/styles.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -55,7 +56,9 @@
                             </a>
                             <div class="collapse" id="collapsePacientes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="./formularios/registrarPaciente.php">Agregar Paciente</a>
+                                    <a class="nav-link" href="registrarPaciente.php">Agregar Paciente</a>
+                                    <a class="nav-link" href="editarPaciente.php">Editar Paciente</a>
+                                    <a class="nav-link" href="registrarPaciente.php">Eliminar Paciente</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctor" aria-expanded="false" aria-controls="collapseLayouts">
@@ -65,17 +68,9 @@
                             </a>
                             <div class="collapse" id="collapseDoctor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="./formularios/registrarDoctor.php">Agregar Doctor</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCitas" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Citas
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseCitas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="./formularios/registrarCita.php">Agregar Cita</a>
+                                    <a class="nav-link" href="registrarDoctor.php">Agregar Doctor</a>
+                                    <a class="nav-link" href="editarDoctor.php">Editar Doctor</a>
+                                    <a class="nav-link" href="registrarDoctor.php">Eliminar Doctor</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -115,19 +110,19 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Citas
                             </a>
-                            <a class="nav-link" href="./tablas/tablaUsuarios.php">
+                            <a class="nav-link" href="tablaUsuarios.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Usuarios
                             </a>
-                            <a class="nav-link" href="./tablas/tablaPacientes.php">
+                            <a class="nav-link" href="tablaPacientes.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Pacientes
                             </a>
-                            <a class="nav-link" href="./tablas/tablaDoctores.php">
+                            <a class="nav-link" href="tablaDoctores.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Doctores
                             </a>
-                            <a class="nav-link" href="./tablas/tablaCitas.php">
+                            <a class="nav-link" href="tablaCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Citas
                             </a>
@@ -149,9 +144,9 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Pacientes</div>
+                                    <div class="card-body">Restablecer contraseña</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="restablecerContraseña.php">ingresar</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -248,6 +243,8 @@
                                             <td>2011/07/25</td>
                                             <td>$170,750</td>
                                         </tr>
+                                        
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -269,11 +266,11 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="./js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="./assets/demo/chart-area-demo.js"></script>
-        <script src="./assets/demo/chart-bar-demo.js"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="./js/datatables-simple-demo.js"></script>
+        <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>

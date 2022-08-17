@@ -1,5 +1,5 @@
 <?php
- require "conexion.php"; #Conexion a la BD
+ require "./conexion/conexion.php"; #Conexion a la BD
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Inicio de sesion</h3></div>
                                     <div class="card-body">
-                                        <form method="POST" action="verificarUsuario.php">
+                                        <form method="POST" action="./scriptsSQL/verificarUsuario.php">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputUsuario" name="usuario" type="text" placeholder="Usuario"/> <!-- si se utiliza required no es necesario validacion JS -->
                                                 <label for="inputUsuario">Usuario</label>
