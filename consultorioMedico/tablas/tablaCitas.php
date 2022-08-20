@@ -167,7 +167,7 @@
                                 Citas medicas
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla Pacientes -->
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
                                             <th>Expediente</th>

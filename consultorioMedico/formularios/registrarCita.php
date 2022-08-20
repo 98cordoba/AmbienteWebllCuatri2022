@@ -33,7 +33,7 @@
                                         <form method="Post" action="../scriptsSQL/insertCita.php">
                                             <div class="row mb-3">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="descripcionCita"/>
+                                                        <textarea class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="descripcionCita"></textarea>
                                                         <label for="inputFirstName">Descripcion</label>
                                                     </div>
                                             </div>

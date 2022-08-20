@@ -167,7 +167,7 @@
                                 Pacientes
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla Pacientes -->
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -177,6 +177,7 @@
                                             <th>Contacto</th>
                                             <th>Fecha de cita</th>
                                             <th>Expediente</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -188,6 +189,7 @@
                                             <th>Contacto</th>
                                             <th>Fecha de cita</th>
                                             <th>Expediente</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
