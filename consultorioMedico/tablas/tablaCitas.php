@@ -7,14 +7,17 @@
  $idUsuario = $_SESSION['idUsuarios'];
  $tipoUsuario = $_SESSION['tipoUsuario'];
  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
- if ( $url === "http://localhost/ConsultorioMedico/tablas/tablaCitas.php") { #usuario administrador
-    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
-    JOIN doctor d on cm.doctorAsignado = d.idDoctor ";
- } else{ #segundo usuario #considerar switch
+ 
+ if (isset($_GET['id'])) {
     $idCitaM=$_GET['id'];
     $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
     JOIN doctor d on cm.doctorAsignado = d.idDoctor WHERE cm.idCita =".$idCitaM;
+ } else{
+    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
+    JOIN doctor d on cm.doctorAsignado = d.idDoctor ";
  }
+ 
+
  $resultado = $mysqli->query($tCitasSELECT); #Consulta de la tabla Citas
 ?>
 <!DOCTYPE html>
@@ -168,7 +171,7 @@
                                 <i class="fas fa-table me-1"></i>
                                 Citas medicas
                             </div>
-                            <div class="card-body"> <!-- Contenido Tabla Pacientes -->
+                            <div class="card-body"> <!-- Contenido Tabla Citas -->
                                 <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
@@ -187,6 +190,7 @@
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
                                             <th>Acciones</th>
+                                            <th>url</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
