@@ -92,3 +92,4 @@ COLLATE = utf8_spanish_ci;
 --************Insert Expediente************
 INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (1,1,1,1);
 INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (2,2,2,2);
+INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (1,1,1,2);

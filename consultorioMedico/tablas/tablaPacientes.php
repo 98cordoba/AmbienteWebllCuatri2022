@@ -11,8 +11,8 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $tPacientesSELECT = "SELECT p.idPaciente, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, p.fechaNacimiento, p.telefonoPaciente, p.correoPaciente, c.fechaCita, c.idCita 
- FROM pacientes p JOIN cita c on p.citaPaciente = c.idCita";
+ $tPacientesSELECT = "SELECT idPaciente, nombrePaciente, apellidosPaciente, cedulaPaciente, fechaNacimiento, telefonoPaciente, correoPaciente
+ FROM pacientes";
  $resultado = $mysqli->query($tPacientesSELECT); #Consulta de la tabla Pacientes
 ?>
 <!DOCTYPE html>
@@ -175,7 +175,6 @@
                                             <th>Identificacion</th>
                                             <th>Fecha de nacimiento</th>
                                             <th>Contacto</th>
-                                            <th>Fecha de cita</th>
                                             <th>Expediente</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -187,7 +186,6 @@
                                             <th>Identificacion</th>
                                             <th>Fecha de nacimiento</th>
                                             <th>Contacto</th>
-                                            <th>Fecha de cita</th>
                                             <th>Expediente</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -202,8 +200,7 @@
                                                 <td><?php echo $row['cedulaPaciente']  ?></td>
                                                 <td><?php echo $row['fechaNacimiento']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoPaciente']."<br>Correo: ".$row['correoPaciente']  ?></td>
-                                                <td><?php echo $row['fechaCita']  ?></td>
-                                                <td><?php echo "Numero: ".$row['idCita']."<br> <a href='expediente.php' >Ver expediente</a>"  ?></td>
+                                                <td><?php echo " <a href='expediente.php?id=$idPaciente'>Ver expediente</a>" ?></td>
                                                 <th><?php echo "<a href='../formularios/editarPaciente.php?id=$idPaciente'>Modificar</a><br><a href='../formularios/eliminarPaciente.php?id=$idPaciente'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>

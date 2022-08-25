@@ -42,6 +42,10 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
+                                                    Con el Doctor:<br />
+                                                    <select name="idProfesor" id="idProfesor" style="font-size:Medium;width:296px;">
+                                                    
+                                                    </select><br />
                                                     <select class="form-select" aria-label="Default select example">
                                                     <option selected>Seleccione el rol de trabajo</option>
                                                     <option value="1">One</option>

@@ -115,19 +115,19 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Citas
                             </a>
-                            <a class="nav-link" href="./tablas/tablaUsuarios.php">
+                            <a class="nav-link" href="../tablas/tablaUsuarios.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Usuarios
                             </a>
-                            <a class="nav-link" href="./tablas/tablaPacientes.php">
+                            <a class="nav-link" href="../tablas/tablaPacientes.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Pacientes
                             </a>
-                            <a class="nav-link" href="./tablas/tablaDoctores.php">
+                            <a class="nav-link" href="../tablas/tablaDoctores.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Doctores
                             </a>
-                            <a class="nav-link" href="./tablas/tablaCitas.php">
+                            <a class="nav-link" href="../tablas/tablaCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Citas
                             </a>

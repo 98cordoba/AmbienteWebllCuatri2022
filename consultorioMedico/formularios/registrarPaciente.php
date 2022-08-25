@@ -33,13 +33,13 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="pacienteNombre" />
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="pacienteNombre" required />
                                                         <label for="inputFirstName">Nombre del Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="pacienteApellidos"/>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="pacienteApellidos" />
                                                         <label for="inputLastName">Apellidos del paciente</label>
                                                     </div>
                                                 </div>

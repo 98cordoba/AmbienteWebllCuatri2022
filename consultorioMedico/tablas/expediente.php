@@ -11,10 +11,12 @@
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $expedienteSELECT = "SELECT ex.idExpediente, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor  FROM expediente ex
+ $idPaciente=$_GET['id'];
+ $expedienteSELECT = "SELECT ex.idExpediente, cm.idCita, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor  FROM expediente ex
  JOIN cita cm on ex.exConsulta = cm.idCita
  JOIN pacientes p on ex.exPaciente = p.idPaciente
- JOIN doctor d on ex.exDoctor= d.idDoctor";
+ JOIN doctor d on ex.exDoctor= d.idDoctor
+ where p.idPaciente = ".$idPaciente;
  $resultado = $mysqli->query($expedienteSELECT); #Consulta de la tabla Citas
 ?>
 <!DOCTYPE html>
@@ -172,7 +174,7 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Numero de Expediente</th>
+                                            <th>Cita</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
                                             <th>Datos del paciente</th>
@@ -181,7 +183,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Numero de Expediente</th>
+                                            <th>Cita</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
                                             <th>Datos del paciente</th>
@@ -192,7 +194,7 @@
                                         <?php 
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
-                                                <td><?php echo $row['idExpediente']  ?></td>
+                                                <td><?php $CitaM = $row['idCita']; echo "<a href='tablaCitas.php?id=$CitaM'>$CitaM</a>"  ?> </td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
                                                 <td><?php echo $row['nombrePaciente']."<br> ".$row['apellidosPaciente']."<br> Cedula: ".$row['cedulaPaciente']  ?></td>
