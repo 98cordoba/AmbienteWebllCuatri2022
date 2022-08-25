@@ -23,7 +23,7 @@ $estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consu
                 echo "contraseña no coincide"; #Contraseña incorrecta
             }
         }else{
-            echo "No existe usuario"; #Usuario incorrecto
+            header("Location: ../errores/404.html"); #Redireccionamiento a error 500
         }
     }else{
         echo "Error al ejecutar la consulta"; #FALSE = LA CONSULTA NO SE EJECUTO
