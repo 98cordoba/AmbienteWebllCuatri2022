@@ -26,8 +26,7 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
-    <?php 
-        while ($row = $resultado->fetch_assoc()) { ?>
+    <?php while ($row = $resultado->fetch_assoc()) { ?>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -41,10 +40,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="pacienteID"
-                                                        value="<?php  echo "$idPaciente";
-                                                        ?>" > 
-                                                        <label for="inputFirstName"><!--<?php #echo "$idPaciente"; ?> --> ID</label> 
+                                                        <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="pacienteID" value="<?php  echo "$idPaciente";?>" > 
                                                     </div>
                                                 </div>
                                             </div>

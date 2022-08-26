@@ -13,9 +13,9 @@ END$$
 /* ********************________INSERTS___________******************** */
 /* ROLES */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertartipousuario`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertartipousuario`(in PtipoDeUsuario varchar(45))
+CREATE PROCEDURE `consultoriomedico`.`spInsertartipousuario`(in ptipoDeUsuario varchar(45))
     BEGIN
-	INSERT INTO tipousuario (PtipoDeUsuario);
+	INSERT INTO tipousuario(tipoDeUsuario) VALUES (ptipoDeUsuario);
 END$$
 /* USUARIOS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarUsuario`$$

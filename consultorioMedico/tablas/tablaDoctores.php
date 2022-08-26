@@ -176,7 +176,7 @@
                                 <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
+
                                             <th>Nombre</th>
                                             <th>Apellidos</th>
                                             <th>Identificacion</th>
@@ -188,7 +188,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>id</th>
+
                                             <th>Nombre</th>
                                             <th>Apellidos</th>
                                             <th>Identificacion</th>
@@ -202,7 +202,6 @@
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
                                                 <?php $idDoctor =  $row['idDoctor'];?>
-                                                <td><?php echo $row['idDoctor'] ?></td>
                                                 <td><?php echo $row['nombreDoctor']  ?></td>
                                                 <td><?php echo $row['apellidosDoctor']  ?></td>
                                                 <td><?php echo $row['cedulaDoctor']  ?></td>

@@ -1,15 +1,8 @@
 <?php
-  require "../conexion/conexion.php"; #Conexion a la BD
-  session_start(); #Necesario para utilizar sesiones 
-  if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
-     header("Location: index.php");
-  }
-  #Asignacion de la sesion en Variables
-  $tipoUsuario = $_SESSION['tipoUsuario'];
-  $idCita=$_GET['id'];
-  $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
-  JOIN doctor d on cm.doctorAsignado = d.idDoctor WHERE cm.idCita =".$idCita;
+ session_start(); #Necesario para utilizar sesiones
+$idUser = $_SESSION['idUsuarios'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,9 +11,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Modificar Cita</title>
+        <title>Registrarme</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.5.1.js"></script>
+        <script src="../js/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.css">
+        <script src="../js/carga.js"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -30,43 +27,39 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Modificar</h3></div>
-                                    <div class="card-body">      
-                                        <form method="Post" action="../scriptsSQL/updateCita.php">
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="citaID" value="<?php  echo "$idCita"; ?>" disabled readonly/>
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                            <div class="row mb-3">
-                                                <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="descripcionCita"/>
-                                                        <label for="inputFirstName">Descripcion</label>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Bienvenido</h3><br><h4>Por favor complete el formulario</h4></div>
+                                    <div class="card-body">
+                                        <form method="Post" action="../scriptsSQL/updatePassword.php">
+                                        <div class="row mb-3">    
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="date" placeholder="Enter your last name" name="fechaCita" />
-                                                        <label for="inputLastName">Fecha de Nacimiento</label>
+                                                    <input type="hidden" name="idUser" value="<?php  echo "$idUser"; ?>"> 
                                                     </div>
-                                                </div>   
-                                                <div class="col-md-6"> 
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">    
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="passwd"/>
+                                                        <label for="inputLastName">Nueva Contraseña</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                            <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="citaDoc"/>
-                                                            <label for="inputFirstName">ID Doctor</label>
+                                                        <input class="form-control" id="inputFirstName" type="Text" placeholder="Enter your first name" name="passwordUsuario"/>
+                                                        <label for="inputFirstName">Confirmar Contraseña</label> 
                                                     </div>
-                                                </div> 
+                                                </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" >Actualizar Cita</button ></div>
+                                            <button type="submit" class="btn btn-primary" >Restablecer Contraseña</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="../tablas/tablaCitas.php">Buscar una Cita</a></div>
+                                        <div class="small"><a href="../principal.php">Regresar</a></div>
                                     </div>
                                 </div>
                             </div>

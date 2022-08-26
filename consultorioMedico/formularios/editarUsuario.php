@@ -6,14 +6,11 @@
  }
  #Asignacion de la sesion en Variables
  $tipoUsuario = $_SESSION['tipoUsuario'];
- $idUsuarios=$_GET['id'];
-
+ $idUser=$_GET['id'];
  $UsuarioSELECT = "SELECT u.idUsuarios, u.nombreUsuario, u.passwordUsuario, tu.tipoDeUsuario FROM usuarios u
  JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario
- where u.idUsuarios = ".$idUsuarios;
-
+ where u.idUsuarios = ".$idUser;
  $resultado = $mysqli->query($UsuarioSELECT); #Consulta de los datos del usuario
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +25,7 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
-        <?php 
-        while ($row = $resultado->fetch_assoc()) { ?>
+        <?php while ($row = $resultado->fetch_assoc()) { ?>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -39,21 +35,21 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Editar Usuario</h3></div>
                                     <div class="card-body">
-                                        <form method="Post" action="#">
+                                        <form method="Post" action="../scriptsSQL/updateUsuario.php">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputTipoUsuario" type="text"  name="tipoUsuario" value="<?php  echo "$tipoUsuario";?>" disabled readonly/> 
-                                                        <label for="inputFirstName"><!--<?php #echo "$idPaciente"; ?> --> Tipo de Usuario</label> 
+                                                        <input class="form-control" id="inputTipoUsuario" type="hidden" name="idUser"
+                                                         value="<?php echo "$idUser";?>"/> 
                                                     </div>
                                                 </div>
                                             </div>
-                                                                                        <div class="row mb-3">
+                                            <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputNombreUsuario" type="text" placeholder="Enter your first name" name="usuarioNombre" 
                                                         value="<?php echo $row['nombreUsuario']  ?>"/>
-                                                        <label for="inputNombreUsuario">  Nombre de Usuario</label>
+                                                        <label for="inputNombreUsuario"> Nombre de Usuario</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -65,15 +61,18 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                
-                                            
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="inputTipoUsuario" type="text"  name="tipoUsuario"
+                                                         value="<?php echo $row['tipoDeUsuario'] ?>" /> 
+                                                        <label for="inputFirstName"> Tipo de Usuario</label> 
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" >Guardar cambios</button ></div>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
-                                        
                                     </div>
                                 </div>
                             </div>
