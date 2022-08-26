@@ -31,9 +31,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./menus/configuracion.php">Configuracion</a></li>
+                        <li><a class="dropdown-item" href="./configuracion.php">Configuracion</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="logout.php">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item" href="../logout.php">Cerrar sesion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -41,10 +41,10 @@
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav"> <!--Menu lateral-->
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
+                <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Estadisticas</div>
-                            <a class="nav-link" href="../principal.php">
+                            <a class="nav-link" href="principal.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -57,7 +57,7 @@
                             </a>
                             <div class="collapse" id="collapsePacientes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="registrarPaciente.php">Agregar Paciente</a>
+                                    <a class="nav-link" href="../formularios/registrarPaciente.php">Agregar Paciente</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctor" aria-expanded="false" aria-controls="collapseLayouts">
@@ -67,7 +67,17 @@
                             </a>
                             <div class="collapse" id="collapseDoctor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="registrarDoctor.php">Agregar Doctor</a>
+                                    <a class="nav-link" href="../formularios/registrarDoctor.php">Agregar Doctor</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCitas" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Citas
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseCitas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="../formularios/registrarCita.php">Agregar Cita</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -75,51 +85,39 @@
                                 Medicamentos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                         Error
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="./errores/401.html">401 Page</a>
-                                            <a class="nav-link" href="./errores/404.html">404 Page</a>
-                                            <a class="nav-link" href="./errores/500.html">500 Page</a>
+                                            <a class="nav-link" href="../errores/401.html">401 Page</a>
+                                            <a class="nav-link" href="../errores/404.html">404 Page</a>
+                                            <a class="nav-link" href="../errores/500.html">500 Page</a>
                                         </nav>
                                     </div>
-                                </nav>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages"></nav>
                             </div>
                             <?php } ?>
                             <div class="sb-sidenav-menu-heading">Tablas</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="../charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Citas
                             </a>
-                            <a class="nav-link" href="tablaUsuarios.php">
+                            <a class="nav-link" href="../tablas/tablaUsuarios.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Usuarios
                             </a>
-                            <a class="nav-link" href="tablaPacientes.php">
+                            <a class="nav-link" href="../tablas/tablaPacientes.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Pacientes
                             </a>
-                            <a class="nav-link" href="tablaDoctores.php">
+                            <a class="nav-link" href="../tablas/tablaDoctores.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Doctores
                             </a>
-                            <a class="nav-link" href="tablaCitas.php">
+                            <a class="nav-link" href="../tablas/tablaCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Citas
                             </a>
@@ -150,7 +148,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Restablecer contraseña</div>
+                                    <div class="card-body">Modificar Usuario</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <?php echo "<a class='small text-white stretched-link' href='../formularios/editarUsuario.php?id=$idUser'>Modificar</a>" ?>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -179,7 +177,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Usuarios</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="tablaUsuarios.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
