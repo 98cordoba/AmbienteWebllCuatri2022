@@ -209,7 +209,7 @@
                                                 <td><?php echo "Telefono: ".$row['telefonoDoctor']."<br>Correo: ".$row['correoDoctor']  ?></td>
                                                 <td><?php echo $row['especialidad']  ?></td>
                                                 <td><?php echo $row['tipoDeUsuario']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarDoctor.php?id=$idDoctor'>Modificar</a><br><a href='../formularios/eliminarDoctor.php?id=$idDoctor'>Eliminar</a>" ?></th>
+                                                <th><?php echo "<a href='../formularios/editarDoctor.php?id=$idDoctor'>Modificar</a><br><a href='../scriptsSQL/deleteDoctor.php?id=$idDoctor'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

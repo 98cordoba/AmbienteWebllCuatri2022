@@ -8,12 +8,16 @@ $doctorTelefono = $_POST['doctorTelefono'];
 $doctorCorreo = $_POST['doctorCorreo'];
 $doctorEspecialidad = $_POST['doctorEspecialidad'];
 $doctorTpUsuario = $_POST['doctorTpUsuario'];
- 
-$consultaIDoctor = "UPDATE doctor SET nombreDoctor = ?, apellidosDoctor = ?, cedulaDoctor = ?, telefonoDoctor = ?, correoDoctor = ?, especialidad = ?, tipoUsuario = ? WHERE idDoctor = ?";
-
-$consultaPreparada =  mysqli_prepare($mysqli,$consultaIDoctor); #Se prepara la consulta ***[Devuelve un objeto mysqli_stmt]***
-$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"ssiissii",$doctorNombre,$doctorApellidos,$doctorCedula,$doctorTelefono,$doctorCorreo,$doctorEspecialidad,$doctorTpUsuario,$doctorID);
-$estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consulta   ***[Devuelve TRUE/FALSE]***
+$stmt = $mysqli->prepare("Call spActualizaDoctor(?,?,?,?,?,?,?,?)");
+$stmt->bind_param("ssiissii",$doctorNombre,$doctorApellidos,$doctorCedula,$doctorTelefono,$doctorCorreo,$doctorEspecialidad,$doctorTpUsuario,$doctorID);
+$stmt->execute();
+$stmt->close();
+header("Location: ../principal.php"); 
+/* 
+$consultaIDoctor    = "UPDATE doctor SET nombreDoctor = ?, apellidosDoctor = ?, cedulaDoctor = ?, telefonoDoctor = ?, correoDoctor = ?, especialidad = ?, tipoUsuario = ? WHERE idDoctor = ?";
+$consultaPreparada  = mysqli_prepare($mysqli,$consultaIDoctor); #Se prepara la consulta ***[Devuelve un objeto mysqli_stmt]***
+$estadoConsulta     = mysqli_stmt_bind_param($consultaPreparada,"ssiissii",$doctorNombre,$doctorApellidos,$doctorCedula,$doctorTelefono,$doctorCorreo,$doctorEspecialidad,$doctorTpUsuario,$doctorID);
+$estadoConsulta     = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consulta   ***[Devuelve TRUE/FALSE]***
     if($estadoConsulta==true){ #TRUE = la consulta se ejecuto
       // $estadoConsulta = mysqli_stmt_bind_result($consultaPreparada,$idUser,$Username,$password_bd,$tUsuario); # Asociar las variables
       // mysqli_stmt_fetch($consultaPreparada); # Leer resultados
@@ -23,4 +27,5 @@ $estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consu
         echo '<script language="javascript">alert("Error al ejecutar la consulta");</script>';
         header("Location: ../principal.php"); #Redireccionamiento a la pantalla principal
     }
+*/
 ?>

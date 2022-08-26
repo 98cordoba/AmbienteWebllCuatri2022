@@ -201,7 +201,7 @@
                                                 <td><?php echo $row['fechaNacimiento']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoPaciente']."<br>Correo: ".$row['correoPaciente']  ?></td>
                                                 <td><?php echo " <a href='expediente.php?id=$idPaciente'>Ver expediente</a>" ?></td>
-                                                <th><?php echo "<a href='../formularios/editarPaciente.php?id=$idPaciente'>Modificar</a><br><a href='../formularios/eliminarPaciente.php?id=$idPaciente'>Eliminar</a>" ?></th>
+                                                <th><?php echo "<a href='../formularios/editarPaciente.php?id=$idPaciente'>Modificar</a><br><a href='../scriptsSQL/deletePaciente.php?id=$idPaciente'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

@@ -63,7 +63,7 @@ CREATE TABLE `consultoriomedico`.`pacientes` (
   fechaNacimiento VARCHAR(10) NOT NULL,
   telefonoPaciente INT NOT NULL,
   correoPaciente VARCHAR(45) NOT NULL,
-  PRIMARY KEY (idPaciente)
+  PRIMARY KEY (idPaciente))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;

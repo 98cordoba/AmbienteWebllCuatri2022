@@ -7,9 +7,16 @@ $cedulaPaciente = $_POST['pacienteCedula'];
 $fechaPaciente = $_POST['pacienteFechaN'];
 $telefonoPaciente = $_POST['pacienteTelefono'];
 $correoPaciente = $_POST['pacienteCorreo'];
-$consultaUPaciente = "UPDATE pacientes SET nombrePaciente = ?, apellidosPaciente = ?, cedulaPaciente = ?, fechaNacimiento = ?, telefonoPaciente = ?, correoPaciente = ? WHERE idPaciente = ?";
+$stmt = $mysqli->prepare("Call spActualizaPaciente(?,?,?,?,?,?,?)");
+$stmt->bind_param("ssisisii",$nombrePaciente,$apellidoPaciente,$cedulaPaciente,$fechaPaciente,$telefonoPaciente,$correoPaciente,$IDPaciente);
+$stmt->execute();
+$stmt->close();
+header("Location: ../principal.php"); 
+/*
+$pacienteCita = $_POST['pacienteCita'];
+$consultaUPaciente = "UPDATE pacientes SET nombrePaciente = ?, apellidosPaciente = ?, cedulaPaciente = ?, fechaNacimiento = ?, telefonoPaciente = ?, correoPaciente = ?, citaPaciente = ? WHERE idPaciente = ?";
 $consultaPreparada =  mysqli_prepare($mysqli,$consultaUPaciente); #Se prepara la consulta ***[Devuelve un objeto mysqli_stmt]***
-$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"ssisisi",$nombrePaciente,$apellidoPaciente,$cedulaPaciente,$fechaPaciente,$telefonoPaciente,$correoPaciente,$IDPaciente);
+$estadoConsulta = mysqli_stmt_bind_param($consultaPreparada,"ssisisii",$nombrePaciente,$apellidoPaciente,$cedulaPaciente,$fechaPaciente,$telefonoPaciente,$correoPaciente,$pacienteCita,$IDPaciente);
 $estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consulta   ***[Devuelve TRUE/FALSE]***
     if($estadoConsulta==true){ #TRUE = la consulta se ejecuto
       // $estadoConsulta = mysqli_stmt_bind_result($consultaPreparada,$idUser,$Username,$password_bd,$tUsuario); # Asociar las variables
@@ -20,4 +27,5 @@ $estadoConsulta = mysqli_stmt_execute($consultaPreparada);  #Se ejecuta la consu
         echo '<script language="javascript">alert("Error al ejecutar la consulta");</script>';
         header("Location: ../principal.php"); #Redireccionamiento a la pantalla principal
     }
+*/
 ?>

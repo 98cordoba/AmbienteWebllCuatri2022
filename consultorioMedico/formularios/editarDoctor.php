@@ -34,7 +34,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="doctorID" value="<?php  echo "$idDoc"; ?>" disabled readonly/><!-- value="<?php# $idDoc ?>" disabled readonly -->
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="doctorID" value="<?php  echo "$idDoc"; ?>" /><!-- value="<?php# $idDoc ?>" disabled readonly -->
                                                         <label for="inputFirstName"><!--<?php #echo "$idDoc"; ?> --> ID</label> 
                                                     </div>
                                                 </div>

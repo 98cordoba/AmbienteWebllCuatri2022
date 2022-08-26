@@ -170,25 +170,26 @@
                                 <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
-                                            <th>Usuario</th>
                                             <th>Nombre de usuario</th>
                                             <th>Tipo Usuario</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Usuario</th>
                                             <th>Nombre de usuario</th>
                                             <th>Tipo Usuario</th>
+                                            <th>Tipo Usuario</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
-                                            <tr>
-                                                <td><?php echo $row['idUsuarios']  ?></td>
+                                            <tr><?php $idUsuario = $row['idUsuarios']  ?>
                                                 <td><?php echo $row['nombreUsuario']  ?></td>
                                                 <td><?php echo $row['tipoDeUsuario']  ?></td>
+                                                <th><?php echo "<a href='../formularios/editarUsuario.php?id=$idUsuario'>Modificar</a><br><a href='../scriptsSQL/deleteUsuario.php?id=$idUsuario'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

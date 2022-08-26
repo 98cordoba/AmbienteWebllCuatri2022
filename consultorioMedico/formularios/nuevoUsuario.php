@@ -13,6 +13,10 @@
         <title>Registrarme</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.5.1.js"></script>
+        <script src="../js/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.css">
+        <script src="../js/carga.js"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -42,16 +46,16 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                    Con el Doctor:<br />
-                                                    <select name="idProfesor" id="idProfesor" style="font-size:Medium;width:296px;">
+                                                    Rol de trabajo:<br />
+                                                    <select name="idtipoUsuario" id="idtipoUsuario " style="font-size:Medium;width:296px;">
                                                     
                                                     </select><br />
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <!-- <select class="form-select" aria-label="Default select example">
                                                     <option selected>Seleccione el rol de trabajo</option>
                                                     <option value="1">One</option>
                                                     <option value="2">Two</option>
                                                     <option value="3">Three</option>
-                                                    </select>
+                                                    </select> -->
                                                         
                                                     </div>
                                                 </div>

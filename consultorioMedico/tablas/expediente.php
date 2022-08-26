@@ -171,7 +171,7 @@
                                 Expedientes
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla Pacientes -->
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
                                             <th>Cita</th>
@@ -179,6 +179,7 @@
                                             <th>Descripcion</th>
                                             <th>Datos del paciente</th>
                                             <th>Datos del Doctor</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -188,17 +189,19 @@
                                             <th>Descripcion</th>
                                             <th>Datos del paciente</th>
                                             <th>Datos del Doctor</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php 
                                             while ($row = $resultado->fetch_assoc()) { ?>
-                                            <tr>
+                                            <tr> <?php $idExpediente = $row['idExpediente']?>
                                                 <td><?php $CitaM = $row['idCita']; echo "<a href='tablaCitas.php?id=$CitaM'>$CitaM</a>"  ?> </td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
                                                 <td><?php echo $row['nombrePaciente']."<br> ".$row['apellidosPaciente']."<br> Cedula: ".$row['cedulaPaciente']  ?></td>
                                                 <td><?php echo $row['nombreDoctor']."<br> ".$row['apellidosDoctor']."<br> Cedula: ".$row['cedulaDoctor']  ?></td>
+                                                <th><?php echo "<a href='../formularios/editarExpediente.php?id=$idExpediente'>Modificar</a><br><a href='../scriptsSQL/deleteExpediente.php?id=$idExpediente'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
