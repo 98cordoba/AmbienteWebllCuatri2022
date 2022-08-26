@@ -4,8 +4,10 @@ $citaID = $_POST['citaID'];
 $citaDescripcion = $_POST['descripcionCita'];
 $citaFecha = $_POST['fechaCita'];
 $docCita = $_POST['citaDoc'];
-$stmt = $mysqli->prepare("Call spActualizaCita(?,?,?,?)");
-$stmt->bind_param("ssii",$citaFecha,$citaDescripcion,$docCita,$citaID);
+$citaPaciente = $_POST['pacienteCita'];
+
+$stmt = $mysqli->prepare("Call spActualizaCita(?,?,?,?,?)");
+$stmt->bind_param("ssiii",$citaFecha,$citaDescripcion,$docCita,$citaID, $citaPaciente);
 $stmt->execute();
 $stmt->close();
 header("Location: ../principal.php"); 

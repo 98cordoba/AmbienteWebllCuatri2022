@@ -6,6 +6,8 @@
  }
  #Asignacion de la sesion en Variables
  $tipoUsuario = $_SESSION['tipoUsuario'];
+
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,49 +35,45 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="pacienteNombre" required />
-                                                        <label for="inputFirstName">Nombre del Paciente</label>
+                                                        <input class="form-control" id="inputNombre" type="text" placeholder="Nombre" name="pacienteNombre" required />
+                                                        <label for="inputNombre">Nombre del Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="pacienteApellidos" />
-                                                        <label for="inputLastName">Apellidos del paciente</label>
+                                                        <input class="form-control" id="inputApellidos" type="text" placeholder="Apellidos" name="pacienteApellidos" required />
+                                                        <label for="inputApellidos">Apellidos del paciente</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="pacienteCedula"/>
-                                                        <label for="inputFirstName">Cedula del Paciente</label>
+                                                        <input class="form-control" id="inputCedula" type="number" placeholder="Cedula" name="pacienteCedula" required/>
+                                                        <label for="inputCedula">Cedula del Paciente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="date" placeholder="Enter your last name" name="pacienteFechaN" />
-                                                        <label for="inputLastName">Fecha de Nacimiento</label>
+                                                        <input class="form-control" id="inputFechaNaci" type="date" placeholder="Fecha de Nacimiento" name="pacienteFechaN" required/>
+                                                        <label for="inputFechaNaci">Fecha de Nacimiento</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="pacienteTelefono"/>
-                                                        <label for="inputFirstName">Numero Telefonico</label>
+                                                        <input class="form-control" id="inputTelfono" type="number" placeholder="Telefono" name="pacienteTelefono" required/>
+                                                        <label for="inputTelfono">Numero Telefonico</label>
                                                     </div>
                                                 </div>   
-                                                <div class="col-md-6"> 
+                                                <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="pacienteCita"/>
-                                                        <label for="inputFirstName">ID Cita paciente</label>
+                                                        <input class="form-control" id="inputCorreo" type="email" placeholder="name@example.com" name="pacienteCorreo" required/>
+                                                        <label for="inputCorreo">Correo</label>
                                                     </div>
-                                                </div> 
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="pacienteCorreo" />
-                                                <label for="inputEmail">Email address</label>
-                                            </div>
+                                                </div>                                                 
+                                            </div>                                            
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" >Registrar Paciente</button ></div>
                                             </div>

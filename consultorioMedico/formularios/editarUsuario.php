@@ -8,10 +8,11 @@
  $tipoUsuario = $_SESSION['tipoUsuario'];
  $idUsuarios=$_GET['id'];
 
- $tUsuariosSELECT = "SELECT u.idUsuarios, u.nombreUsuario, tu.tipoDeUsuario FROM usuarios u
- JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario ";
+ $UsuarioSELECT = "SELECT u.idUsuarios, u.nombreUsuario, u.passwordUsuario, tu.tipoDeUsuario FROM usuarios u
+ JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario
+ where u.idUsuarios = ".$idUsuarios;
 
- $resultado = $mysqli->query($tUsuariosSELECT); #Consulta de la tabla usuarios
+ $resultado = $mysqli->query($UsuarioSELECT); #Consulta de los datos del usuario
 
 ?>
 <!DOCTYPE html>
@@ -27,6 +28,8 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
+        <?php 
+        while ($row = $resultado->fetch_assoc()) { ?>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -36,26 +39,27 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Editar Usuario</h3></div>
                                     <div class="card-body">
-                                        <form method="Post" action="../scriptsSQL/insertPaciente.php">
+                                        <form method="Post" action="#">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputTipoUsuario" type="text"  name="tipoUsuario" value="<?php  echo "$tipoUsuario";
-                                                        ?>" disabled readonly/> 
+                                                        <input class="form-control" id="inputTipoUsuario" type="text"  name="tipoUsuario" value="<?php  echo "$tipoUsuario";?>" disabled readonly/> 
                                                         <label for="inputFirstName"><!--<?php #echo "$idPaciente"; ?> --> Tipo de Usuario</label> 
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
+                                                                                        <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputNombreUsuario" type="text" placeholder="Enter your first name" name="usuarioNombre" />
+                                                        <input class="form-control" id="inputNombreUsuario" type="text" placeholder="Enter your first name" name="usuarioNombre" 
+                                                        value="<?php echo $row['nombreUsuario']  ?>"/>
                                                         <label for="inputNombreUsuario">  Nombre de Usuario</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputUsuarioPw" type="text" placeholder="Enter your last name" name="usuarioPw"/>
+                                                        <input class="form-control" id="inputUsuarioPw" type="text" placeholder="Enter your last name" name="usuarioPw"
+                                                        value="<?php echo $row['passwordUsuario']  ?>"/>
                                                         <label for="inputUsuarioPw">Contraseña</label>
                                                     </div>
                                                 </div>
@@ -94,5 +98,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
+        <?php } ?>
     </body>
 </html>

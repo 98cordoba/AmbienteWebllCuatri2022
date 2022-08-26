@@ -28,8 +28,8 @@ COLLATE = utf8_spanish_ci;
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (1,'admin','123',1);
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (2,'consul','123',2);
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (3,'recep','123',3);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (4,'Joseph Cordoba','123',2);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (5,'Donnkan Cervantes','123',3);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (4,'Joseph','123',2);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (5,'Donnkan','123',3);
 --************Tabla Doctor************
 CREATE TABLE `consultoriomedico`.`doctor` (
   idDoctor INT NOT NULL AUTO_INCREMENT,

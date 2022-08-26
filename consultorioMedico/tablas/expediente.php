@@ -12,11 +12,13 @@
     $where = "WHERE idUsuario=$idUsuario";
  }
  $idPaciente=$_GET['id'];
+
  $expedienteSELECT = "SELECT ex.idExpediente, cm.idCita, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor  FROM expediente ex
  JOIN cita cm on ex.exConsulta = cm.idCita
  JOIN pacientes p on ex.exPaciente = p.idPaciente
  JOIN doctor d on ex.exDoctor= d.idDoctor
  where p.idPaciente = ".$idPaciente;
+
  $resultado = $mysqli->query($expedienteSELECT); #Consulta de la tabla Citas
 ?>
 <!DOCTYPE html>
@@ -42,7 +44,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Configuracion</a></li>
+                        <li><a class="dropdown-item" href="../menus/configuracion.php">Configuracion</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="../logout.php">Cerrar sesion</a></li>
                     </ul>
