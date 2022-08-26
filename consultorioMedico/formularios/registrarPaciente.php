@@ -63,7 +63,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputTelfono" type="number" placeholder="Telefono" name="pacienteTelefono" required/>
+                                                        <input class="form-control" id="inputTelfono" type="text" placeholder="Telefono" name="pacienteTelefono" required/>
                                                         <label for="inputTelfono">Numero Telefonico</label>
                                                     </div>
                                                 </div>   
