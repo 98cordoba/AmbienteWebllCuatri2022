@@ -27,6 +27,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
         <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
         <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -120,7 +122,35 @@
                 </footer>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="../js/scripts.js"></script>
+        
+        <script>
+            $(document).ready(function () {
+    cargaRoles();
+
+});//(document).ready ==============================
+
+function cargaRoles() { //Inicio funcion carga roles
+    try {
+        $.ajax({
+            url: '../gets/getRoles.php'
+        }).done(function (data) {
+                LlenaRolesJson(data);
+            });
+    } catch (err) {
+        alert(err);
+    } 
+}//Fin cargaRoles ==============================================
+function LlenaRolesJson(TextoJSON) { //Inicio funcion llenar roles
+    var elValor;
+    var elHTML;
+    var ObjetoJSON = JSON.parse(TextoJSON); 
+    for (i = 0; i < ObjetoJSON.length; i++) {
+        elValor = ObjetoJSON[i].id;
+        elHTML = ObjetoJSON[i].nombre;
+        $('#rolTrabajo').append($('<option></option>').val(elValor).html(elHTML));
+    }
+}//Fin LlenaDiasJson ================================================
+
+        </script>
     </body>
 </html>

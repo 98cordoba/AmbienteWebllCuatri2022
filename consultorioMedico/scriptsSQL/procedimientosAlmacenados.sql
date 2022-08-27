@@ -38,26 +38,26 @@ CREATE PROCEDURE `consultoriomedico`.`spGetExpedientes`()
 END$$
 /* ********************________INSERTS___________******************** */
             /* ROLES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertartipousuario`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertartipousuario`(in ptipoDeUsuario varchar(45))
+DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarRol`$$
+CREATE PROCEDURE `consultoriomedico`.`spInsertarRol`(in pnombreRol varchar(45))
     BEGIN
-	INSERT INTO tipousuario(tipoDeUsuario) VALUES (ptipoDeUsuario);
+	INSERT INTO roles(nombreRol) VALUES (pnombreRol);
 END$$
             /* USUARIOS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarUsuario`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertarUsuario`(in pnombreUsuario varchar(45), in ppasswordUsuario varchar(45), in tipoUsuario int)
+CREATE PROCEDURE `consultoriomedico`.`spInsertarUsuario`(in pnombreUsuario varchar(45), in ppasswordUsuario varchar(45), in pRol int)
     BEGIN
-	INSERT INTO usuarios (nombreUsuario,passwordUsuario,tipoUsuario) VALUES (pnombreUsuario, ppasswordUsuario , tipoUsuario);
+	INSERT INTO usuarios (nombreUsuario,passwordUsuario,rol) VALUES (pnombreUsuario, ppasswordUsuario , pRol);
 END$$
-            /* DOCTORES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarDoctor`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertarDoctor`(in pnombreDoctor varchar(45), in papellidosDoctor varchar(45), in pcedulaDoctor int, in ptelefonoDoctor varchar(10) ,in pcorreoDoctor varchar(45),  in pespecialidad varchar(45), in ptipoUsuario int)
+            /* EMPLEADOS */
+DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarEmpleado`$$
+CREATE PROCEDURE `consultoriomedico`.`spInsertarEmpleado`(in pnombreEmpleado varchar(45), in papellidosEmpleado varchar(45), in pcedulaEmpleado varchar(20), in ptelefonoEmpleado varchar(20) ,in pcorreoEmpleado varchar(45),  in pespecialidad varchar(45), in psalario int)
     BEGIN
-	INSERT INTO doctor(nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)VALUES(pnombreDoctor,papellidosDoctor,pcedulaDoctor,ptelefonoDoctor,pcorreoDoctor,pespecialidad,ptipoUsuario);
+	INSERT INTO empleados(nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)VALUES(pnombreEmpleado,papellidosEmpleado,pcedulaEmpleado,ptelefonoDoctor,pcorreoDoctor,pespecialidad,psalario);
 END$$
             /* PACIENTES */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarPaciente`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertarPaciente`(in pnombrePaciente varchar(45), in papellidosPaciente varchar(45), in pcedulaPaciente int, in pfechaNacimiento varchar(10), in ptelefonoPaciente varchar(10),  in pcorreoPaciente varchar(45))
+CREATE PROCEDURE `consultoriomedico`.`spInsertarPaciente`(in pnombrePaciente varchar(45), in papellidosPaciente varchar(45), in pcedulaPaciente varchar(20), in pfechaNacimiento varchar(10), in ptelefonoPaciente varchar(20), in pcorreoPaciente varchar(45))
     BEGIN
 	INSERT INTO pacientes(nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente)VALUES(pnombrePaciente, papellidosPaciente , pcedulaPaciente ,pfechaNacimiento , ptelefonoPaciente , pcorreoPaciente);
 END$$
@@ -66,12 +66,6 @@ DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarCita`$$
 CREATE PROCEDURE `consultoriomedico`.`spInsertarCita`(in pfechaCita varchar(10), in pdescripcion varchar(45), in pdoctorAsignado int, in pcidPaciente varchar(10))
     BEGIN
 	INSERT INTO cita(fechaCita,descripcion,doctorAsignado,cidPaciente)VALUES(pfechaCita,pdescripcion,pdoctorAsignado,pcidPaciente);
-END$$
-            /* EXPEDIENTES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarExpediente`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertarExpediente`(in pexPaciente int,  in pexDoctor int,  in pexConsulta int)
-    BEGIN
-	INSERT INTO expediente (exPaciente,exDoctor,exConsulta)VALUES(pexPaciente,pexDoctor,pexConsulta);
 END$$
 /* ********************________UPDATES___________********************   */
             /* ROLES */
@@ -113,19 +107,19 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaPaciente`(in pnombrePaciente va
                 correoPaciente       = pcorreoPaciente
     where idPaciente = pidPaciente;
 END$$
-            /* DOCTORES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaDoctor`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaDoctor`(in pnombreDoctor varchar(45), in papellidosDoctor VARCHAR(45), in pcedulaDoctor int ,in ptelefonoDoctor varchar(10), in pcorreoDoctor VARCHAR(45), in pespecialidad varchar(45) ,in ptipoUsuario int,in pidDoctor int)
+            /* EMPLEADOS */
+DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaEmpleado`$$
+CREATE PROCEDURE `consultoriomedico`.`spActualizaEmpleado`(in pnombreEmpleado varchar(45), in papellidosEmpleado VARCHAR(45), in pcedulaEmpleado varchar(20) ,in ptelefonoEmpleado varchar(20), in pcorreoEmpleado VARCHAR(45), in pespecialidad varchar(45) ,in pusuario int,in pidEmpleado int)
     BEGIN
-	update doctor 
-            set nombreDoctor     = pnombreDoctor, 
-                apellidosDoctor  = papellidosDoctor,
-                cedulaDoctor     = pcedulaDoctor,
-                telefonoDoctor   = ptelefonoDoctor,
-                correoDoctor     = pcorreoDoctor,
-                especialidad     = pespecialidad,
-                tipoUsuario      = ptipoUsuario
-    where idDoctor = pidDoctor;
+	update empleados 
+            set nombreEmpleado     = pnombreEmpleado, 
+                apellidosEmpleado  = papellidosEmpleado,
+                cedulaEmpleado     = pcedulaEmpleado,
+                telefonoEmpleado   = ptelefonoEmpleado,
+                correoEmpleado     = pcorreoEmpleado,
+                especialidad       = pespecialidad,
+                usuario            = pusuario
+    where idEmpleado = pidEmpleado;
 END$$
             /* CITAS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaCita`$$
@@ -137,22 +131,12 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaCita`(in pfechaCita varchar(10)
                 doctorAsignado   = pdoctorAsignado
     where idCita = pidCita;
 END$$
-            /* EXPEDIENTES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaExpediente`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaExpediente`(in pexPaciente int ,in pexDoctor int, in pexConsulta int ,in pidExpediente int)
-    BEGIN
-	update expediente 
-            set exPaciente       = pexPaciente, 
-                exDoctor         = pexDoctor,
-                exConsulta       = pexConsulta
-    where idExpediente = pidExpediente;
-END$$
 /* ********************________DELETES___________******************** */
             /* Rol */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spEliminaRol`$$
 CREATE PROCEDURE `consultoriomedico`.`spEliminaRol`(in pidRol int)
     BEGIN
-	delete from tipousuario where idtipoUsuario = pidRol;
+	delete from roles where idRol = pidRol;
 END$$
             /* USARIOS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spEliminaUsuario`$$
@@ -172,16 +156,10 @@ CREATE PROCEDURE `consultoriomedico`.`spEliminaCita`(in pidCita int)
     BEGIN
 	delete from cita where idCita = pidCita;
 END$$
-            /* DOCTORES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spEliminaDoctor`$$
-CREATE PROCEDURE `consultoriomedico`.`spEliminaDoctor`(in pidDoctor int)
+            /* EMPLEADOS */
+DROP PROCEDURE IF EXISTS `consultoriomedico`.`spEliminaEmpleado`$$
+CREATE PROCEDURE `consultoriomedico`.`spEliminaEmpleado`(in pidEmpleado int)
     BEGIN
-	delete from doctor where idDoctor = pidDoctor;
-END$$
-            /* EXPEDIENTES */
-DROP PROCEDURE IF EXISTS `consultoriomedico`.`spEliminaExpediente`$$
-CREATE PROCEDURE `consultoriomedico`.`spEliminaExpediente`(in pidExpediente int)
-    BEGIN
-	delete from expediente where idExpediente = pidExpediente;
+	delete from empleados where idEmpleado = pidEmpleado;
 END$$
 DELIMITER ;  

@@ -7,7 +7,7 @@ $fechaPaciente      = $_POST['pacienteFechaN'];
 $telefonoPaciente   = $_POST['pacienteTelefono'];
 $correoPaciente     = $_POST['pacienteCorreo'];
 $stmt = $mysqli->prepare("Call spInsertarPaciente(?,?,?,?,?,?)");
-$stmt->bind_param("ssisss",$nombrePaciente,$apellidoPaciente,$cedulaPaciente,$fechaPaciente,$telefonoPaciente,$correoPaciente);
+$stmt->bind_param("ssssss",$nombrePaciente,$apellidoPaciente,$cedulaPaciente,$fechaPaciente,$telefonoPaciente,$correoPaciente);
 $stmt->execute();
 $stmt->close();
 header("Location: ../principal.php"); 

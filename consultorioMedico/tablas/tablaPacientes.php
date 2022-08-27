@@ -1,11 +1,11 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
  require '../conexion/conexion.php'; #Conexion a la BD
- if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
     header("Location: ../index.php");
  }
- $idUsuario = $_SESSION['idUsuarios'];
- $tipoUsuario = $_SESSION['tipoUsuario'];
+ $idUsuario = $_SESSION['idUsuario'];
+ $tipoUsuario = $_SESSION['rol'];
  if ($tipoUsuario == 1) { #usuario administrador
     $where = "";
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch

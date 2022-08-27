@@ -1,22 +1,21 @@
  <?php
  session_start(); #Necesario para utilizar sesiones
  require '../conexion/conexion.php'; #Conexion a la BD
- if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
     header("Location: ../index.php");
  }
- $idUsuario = $_SESSION['idUsuarios'];
- $tipoUsuario = $_SESSION['tipoUsuario'];
+ $idUsuario = $_SESSION['idUsuario'];
+ $tipoUsuario = $_SESSION['rol'];
  if ($tipoUsuario == 1) { #usuario administrador
     $where = "";
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
  $idPaciente=$_GET['id'];
-
- $expedienteSELECT = "SELECT ex.idExpediente, cm.idCita, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor  FROM expediente ex
- JOIN cita cm on ex.exConsulta = cm.idCita
- JOIN pacientes p on ex.exPaciente = p.idPaciente
- JOIN doctor d on ex.exDoctor= d.idDoctor
+ $expedienteSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreEmpleado, d.apellidosEmpleado, d.cedulaEmpleado
+ FROM cita cm
+ JOIN pacientes p on cm.cidPaciente = p.idPaciente
+ JOIN empleados d on cm.doctorAsignado= d.idEmpleado
  where p.idPaciente = ".$idPaciente;
 
  $resultado = $mysqli->query($expedienteSELECT); #Consulta de la tabla Citas
@@ -181,7 +180,6 @@
                                             <th>Descripcion</th>
                                             <th>Datos del paciente</th>
                                             <th>Datos del Doctor</th>
-                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -191,19 +189,18 @@
                                             <th>Descripcion</th>
                                             <th>Datos del paciente</th>
                                             <th>Datos del Doctor</th>
-                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php 
                                             while ($row = $resultado->fetch_assoc()) { ?>
-                                            <tr> <?php $idExpediente = $row['idExpediente']?>
+                                            <tr> <?php #$idExpediente = $row['idExpediente']?>
                                                 <td><?php $CitaM = $row['idCita']; echo "<a href='tablaCitas.php?id=$CitaM'>$CitaM</a>"  ?> </td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
                                                 <td><?php echo $row['nombrePaciente']."<br> ".$row['apellidosPaciente']."<br> Cedula: ".$row['cedulaPaciente']  ?></td>
-                                                <td><?php echo $row['nombreDoctor']."<br> ".$row['apellidosDoctor']."<br> Cedula: ".$row['cedulaDoctor']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarExpediente.php?id=$idExpediente'>Modificar</a><br><a href='../scriptsSQL/deleteExpediente.php?id=$idExpediente'>Eliminar</a>" ?></th>
+                                                <td><?php echo $row['nombreEmpleado']."<br> ".$row['apellidosEmpleado']."<br> Cedula: ".$row['cedulaEmpleado']  ?></td>
+                                              <!--  <th><?php #echo "<a href='../formularios/editarExpediente.php?id=$idExpediente'>Modificar</a><br><a href='../scriptsSQL/deleteExpediente.php?id=$idExpediente'>Eliminar</a>" ?></th> -->
                                             </tr>
                                             <?php } ?>
                                     </tbody>

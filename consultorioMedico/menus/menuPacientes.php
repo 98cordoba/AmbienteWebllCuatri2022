@@ -1,13 +1,11 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
- if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
     header("Location: index.php");
  }
  #Asignacion de la sesion en Variables
- $tipoUsuario = $_SESSION['tipoUsuario'];
+ $tipoUsuario = $_SESSION['rol'];
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

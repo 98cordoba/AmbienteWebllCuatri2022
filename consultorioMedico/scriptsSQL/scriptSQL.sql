@@ -2,115 +2,107 @@ drop schema `consultoriomedico`; -- borrar esquema
 /* ************Crear base de datos************ */
 CREATE SCHEMA `consultoriomedico` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci ;
 /* ********************________TABLA ROLES___________******************** */
-CREATE TABLE `consultoriomedico`.`tipousuario` (
-  idtipoUsuario INT NOT NULL AUTO_INCREMENT,
-  tipoDeUsuario VARCHAR(45) NOT NULL,
-  PRIMARY KEY (idtipoUsuario))
+CREATE TABLE `consultoriomedico`.`roles` (
+  idRol       INT NOT NULL AUTO_INCREMENT,
+  nombreRol   VARCHAR(45) NOT NULL,
+  PRIMARY KEY (idRol))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT ROLES___________******************** */
-INSERT INTO `consultoriomedico`.`tipousuario` (idtipoUsuario,tipoDeUsuario) VALUES (1,'Administrador');
-INSERT INTO `consultoriomedico`.`tipousuario` (idtipoUsuario,tipoDeUsuario) VALUES (2,'Consultor');
-INSERT INTO `consultoriomedico`.`tipousuario` (idtipoUsuario,tipoDeUsuario) VALUES (3,'Recepcion');
+INSERT INTO `consultoriomedico`.`roles` (idRol,nombreRol) VALUES (1,'Administrador');
+INSERT INTO `consultoriomedico`.`roles` (idRol,nombreRol) VALUES (2,'Consultor');
+INSERT INTO `consultoriomedico`.`roles` (idRol,nombreRol) VALUES (3,'Recepcion');
+INSERT INTO `consultoriomedico`.`roles` (idRol,nombreRol) VALUES (4,'TI');
+INSERT INTO `consultoriomedico`.`roles` (idRol,nombreRol) VALUES (5,'Doctor');
+INSERT INTO `consultoriomedico`.`roles` (idRol,nombreRol) VALUES (6,'Recursos Humanos');
 /* ********************________TABLA USUARIOS___________******************** */
 CREATE TABLE `consultoriomedico`.`usuarios` (
-  idUsuarios INT NOT NULL AUTO_INCREMENT,
-  nombreUsuario VARCHAR(45) NOT NULL,
-  passwordUsuario VARCHAR(45) NOT NULL,
-  tipoUsuario INT NOT NULL,
-  PRIMARY KEY (idusuarios),
-  foreign key(tipoUsuario)references `consultoriomedico`.`tipousuario`(idtipoUsuario))
+  idUsuario         INT NOT NULL AUTO_INCREMENT,
+  nombreUsuario     VARCHAR(45) NOT NULL,
+  passwordUsuario   VARCHAR(45) NOT NULL,
+  rol               INT NOT NULL,
+  PRIMARY KEY (idusuario),
+  foreign key(rol)references `consultoriomedico`.`roles`(idRol))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT USUARIOS___________******************** */
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (1,'admin','123',1);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (2,'consul','123',2);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (3,'recep','123',3);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (4,'Joseph','123',2);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuarios,nombreUsuario,passwordUsuario,tipoUsuario) VALUES (5,'Donnkan','123',3);
-/* ********************________TABLA DOCTORES___________******************** */
-CREATE TABLE `consultoriomedico`.`doctor` (
-  idDoctor INT NOT NULL AUTO_INCREMENT,
-  nombreDoctor VARCHAR(45) NOT NULL,
-  apellidosDoctor VARCHAR(45) NOT NULL,
-  cedulaDoctor INT NOT NULL,
-  telefonoDoctor VARCHAR(10) NOT NULL,
-  correoDoctor VARCHAR(45) NOT NULL,
-  especialidad VARCHAR(45) NOT NULL,
-  tipoUsuario INT NOT NULL,
-  PRIMARY KEY (idDoctor),
-  foreign key(tipoUsuario)references `consultoriomedico`.`tipousuario`(idtipoUsuario))
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (1,'admin','123',1);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (2,'consul','123',2);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (3,'recep','123',3);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (4,'TI','123',4);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (5,'Joseph','123',2);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (6,'Donnkan','123',3);
+/* ********************________TABLA EMPLEADOS___________******************** */
+CREATE TABLE `consultoriomedico`.`empleados` (
+  idEmpleado          INT NOT NULL AUTO_INCREMENT,
+  nombreEmpleado      VARCHAR(45) NOT NULL,
+  apellidosEmpleado   VARCHAR(45) NOT NULL,
+  cedulaEmpleado      VARCHAR(20) NOT NULL,
+  telefonoEmpleado    VARCHAR(20) NOT NULL,
+  correoEmpleado      VARCHAR(45) NOT NULL,
+  especialidad        VARCHAR(45) NULL,
+  salario             INT NOT NULL,
+  usuario             INT NULL,
+  PRIMARY KEY (idEmpleado),
+  foreign key(usuario)references `consultoriomedico`.`usuarios`(idUsuario))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
-/* ********************________INSERT DOCTORES___________******************** */
-INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
-VALUES (1,'Doctor1',"Apellido Doctor1",12345678,'22221111','correoD2@gmail.com','Pediatra',2);
-INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
-VALUES (2,'Doctor2',"Apellido Doctor2",12345679,'11112222','correoD2@gmail.com','Cirujano',2);
-INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
-VALUES (3,'Chi',"Phan Wu",116450808,'22684506','chiph@yahoo.com','Dentista',2);
-INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
-VALUES (4,'Alberto',"Molina Mora",601450889,'44042209','albertomm@hotmail.com','Medicina General',2);
+/* ********************________INSERT EMPLEADOS___________******************** */
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
+VALUES (1,'Joseph Fabian',"Cordoba Aguero ",'207860359','70148852','fabiansb98@gmail.com','Administrador',10000);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
+VALUES (2,'Donnkan',"Cervantes",'207860359','11111111','donnkan@gmail.com','Administrador',10000);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
+VALUES (3,'Alicia',"Fernandes Valverde ",'101163671','22221111','correoD2@gmail.com','Pediatra',1000);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
+VALUES (4,'Jose Vicente',"Fallas Mena",'101270810','11112222','correoD2@gmail.com','Cirujano',5000);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
+VALUES (5,'Chi',"Phan Wu",'116450808','22684506','chiph@yahoo.com','Dentista',2000);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
+VALUES (6,'Alberto',"Molina Mora",'601450889','44042209','albertomm@hotmail.com','Medicina General',4000);
 /* ********************________TABLA PACIENTES___________******************** */
 CREATE TABLE `consultoriomedico`.`pacientes` (
-  idPaciente INT NOT NULL AUTO_INCREMENT,
-  nombrePaciente VARCHAR(45) NOT NULL,
-  apellidosPaciente VARCHAR(45) NOT NULL,
-  cedulaPaciente INT NOT NULL,
-  fechaNacimiento VARCHAR(10) NOT NULL,
-  telefonoPaciente VARCHAR(10) NOT NULL,
-  correoPaciente VARCHAR(45) NOT NULL,
+  idPaciente            INT NOT NULL AUTO_INCREMENT,
+  nombrePaciente        VARCHAR(45) NOT NULL,
+  apellidosPaciente     VARCHAR(45) NOT NULL,
+  cedulaPaciente        VARCHAR(20) NOT NULL,
+  fechaNacimiento       VARCHAR(10) NOT NULL,
+  telefonoPaciente      VARCHAR(20) NOT NULL,
+  correoPaciente        VARCHAR(45) NOT NULL,
+  expediente            INT NULL,
   PRIMARY KEY (idPaciente))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT PACIENTES___________******************** */
-INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente)
-VALUES (1,'Paciente1',"Apellido Paciente1",44443333,"1998-11-20",'99998888','paciente1@gmail.com');
-INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente)
-VALUES (2,'Paciente2',"Apellido Paciente2",33334444,"1990-04-20",'88889999','paciente2@gmail.com');
-INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente)
-VALUES (3,'Gabriel',"Palacios Salazar",115482956,"1979-02-15",'88976232','gabriel.ps@hotmail.com');
-INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente)
-VALUES (4,'Maria',"Bermudez Castillo",601450879,"1985-09-28",'86016623','maria.bp@yahoo.com');
+INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente,expediente)
+VALUES (1,'Dinora',"Obando Garcia",'101019387',"1998-11-20",'99998888','paciente1@gmail.com',1);
+INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente,expediente)
+VALUES (2,'Alejandro',"Araya Borge",'101086526',"1990-04-20",'88889999','paciente2@gmail.com',2);
+INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente,expediente)
+VALUES (3,'Gabriel',"Palacios Salazar",'101240481',"1979-02-15",'88976232','gabriel.ps@hotmail.com',3);
+INSERT INTO `consultoriomedico`.`pacientes` (idPaciente,nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente,expediente)
+VALUES (4,'Maria',"Bermudez Castillo",'101300929',"1985-09-28",'86016623','maria.bp@yahoo.com',4);
 /* ********************________TABLA CITAS___________******************** */
 CREATE TABLE `consultoriomedico`.`cita` (
-  idCita INT NOT NULL AUTO_INCREMENT,
-  fechaCita VARCHAR(10) NOT NULL,
-  descripcion VARCHAR(45) NOT NULL,
-  doctorAsignado INT NOT NULL,
-  cidPaciente INT NOT NULL,
+  idCita            INT NOT NULL AUTO_INCREMENT,
+  fechaCita         VARCHAR(10) NOT NULL,
+  descripcion       VARCHAR(45) NOT NULL,
+  doctorAsignado    INT NOT NULL,
+  cidPaciente       INT NOT NULL,
   PRIMARY KEY (idCita),
-  foreign key(doctorAsignado)references `consultoriomedico`.`doctor`(idDoctor),
+  foreign key(doctorAsignado)references `consultoriomedico`.`empleados`(idEmpleado),
   foreign key (cidPaciente) references `consultoriomedico`.`pacientes`(idPaciente))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT CITAS___________******************** */
-INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (1,'2022-07-20','Consulta General',1, 1);
-INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (2,'2022-07-21','Consulta General',2, 2);
-INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (3,'2022-07-22','Consulta General',1, 2);
-INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (4,'2022-07-23','Consulta General',2, 3);
-INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (5,'2022-07-24','Consulta General',1, 4);
-/* ********************________TABLA EXPEDIENTE___________******************** */
-CREATE TABLE `consultoriomedico`.`expediente` (
-  idExpediente INT NOT NULL AUTO_INCREMENT,
-  exPaciente INT NOT NULL,
-  exDoctor INT NOT NULL,
-  exConsulta INT NOT NULL,
-  PRIMARY KEY (idExpediente),
-  foreign key(exPaciente)references `consultoriomedico`.`pacientes`(idPaciente),
-  foreign key(exDoctor)references `consultoriomedico`.`doctor`(idDoctor),
-  foreign key(exConsulta)references `consultoriomedico`.`cita`(idCita))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_spanish_ci;
-/* ********************________INSERT EXPEDIENTES___________******************** */
-INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (1,1,1,1);
-INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (2,2,2,2);
-INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (3,3,1,3);
-INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (4,4,1,4);
-INSERT INTO `consultoriomedico`.`expediente` (idExpediente,exPaciente,exDoctor,exConsulta) VALUES (5,4,1,5);
+INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (1,'2022-07-20','Consulta General',3, 1);
+INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (2,'2021-07-20','Consulta General',3, 1);
+INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (3,'2022-07-21','Consulta General',4, 2);
+INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (4,'2021-07-22','Consulta General',5, 2);
+INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (5,'2022-07-23','Consulta General',6, 3);
+INSERT INTO `consultoriomedico`.`cita` (idCita,fechaCita,descripcion,doctorAsignado,cidPaciente) VALUES (6,'2021-07-24','Consulta General',3, 4);

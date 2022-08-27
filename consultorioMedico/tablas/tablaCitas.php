@@ -1,20 +1,20 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
  require '../conexion/conexion.php'; #Conexion a la BD
- if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
     header("Location: ../index.php");
  }
- $idUsuario = $_SESSION['idUsuarios'];
- $tipoUsuario = $_SESSION['tipoUsuario'];
+ $idUsuario = $_SESSION['idUsuario'];
+ $tipoUsuario = $_SESSION['rol'];
  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
  
  if (isset($_GET['id'])) {
     $idCitaM=$_GET['id'];
-    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
-    JOIN doctor d on cm.doctorAsignado = d.idDoctor WHERE cm.idCita =".$idCitaM;
+    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreEmpleado FROM cita cm
+    JOIN empleados d on cm.doctorAsignado = d.idEmpleado WHERE cm.idCita =".$idCitaM;
  } else{
-    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
-    JOIN doctor d on cm.doctorAsignado = d.idDoctor ";
+    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreEmpleado FROM cita cm
+    JOIN empleados d on cm.doctorAsignado = d.idEmpleado ";
  }
  
 
@@ -180,7 +180,6 @@
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
                                             <th>Acciones</th>
-                                            <th>url</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -190,7 +189,6 @@
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
                                             <th>Acciones</th>
-                                            <th>url</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -201,9 +199,8 @@
                                                 <td><?php echo $row['idCita']  ?></td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
-                                                <td><?php echo $row['nombreDoctor']  ?></td>
+                                                <td><?php echo $row['nombreEmpleado']  ?></td>
                                                 <th><?php echo "<a href='../formularios/editarCita.php?id=$idCitaM'>Modificar</a><br><a href='../formularios/eliminarDoctor.php?id=$idCitaM'>Eliminar</a>" ?></th>
-                                                <td><?php echo $url  ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

@@ -1,18 +1,18 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
  require '../conexion/conexion.php'; #Conexion a la BD
- if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
     header("Location: ../index.php");
  }
- $idUsuario = $_SESSION['idUsuarios'];
- $tipoUsuario = $_SESSION['tipoUsuario'];
+ $idUsuario = $_SESSION['idUsuario'];
+ $tipoUsuario = $_SESSION['rol'];
  if ($tipoUsuario == 1) { #usuario administrador
     $where = "";
  } elseif($tipoUsuario == 2){ #segundo usuario #considerar switch
     $where = "WHERE idUsuario=$idUsuario";
  }
- $tUsuariosSELECT = "SELECT u.idUsuarios, u.nombreUsuario, tu.tipoDeUsuario FROM usuarios u
- JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario";
+ $tUsuariosSELECT = "SELECT u.idUsuario, u.nombreUsuario, r.nombreRol FROM usuarios u
+ JOIN roles r on u.rol = r.idRol";
  $resultado = $mysqli->query($tUsuariosSELECT); #Consulta de la tabla usuarios
 ?> 
 <!DOCTYPE html>
@@ -186,9 +186,9 @@
                                     <tbody>
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
-                                            <tr><?php $idUsuario = $row['idUsuarios']  ?>
+                                            <tr><?php $idUsuario = $row['idUsuario']  ?>
                                                 <td><?php echo $row['nombreUsuario']  ?></td>
-                                                <td><?php echo $row['tipoDeUsuario']  ?></td>
+                                                <td><?php echo $row['nombreRol']  ?></td>
                                                 <th><?php echo "<a href='../formularios/editarUsuario.php?id=$idUsuario'>Modificar</a><br><a href='../scriptsSQL/deleteUsuario.php?id=$idUsuario'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
