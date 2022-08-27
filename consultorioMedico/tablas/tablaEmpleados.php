@@ -151,14 +151,14 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Doctores</h1>
+                        <h1 class="mt-4">Empleados</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="../principal.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tabla de Doctores</li>
+                            <li class="breadcrumb-item active">Tabla de Empleados</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                               <p>En esta tabla se detallan los Doctores registrados en el sistema de este centro medico.</p>
+                               <p>En esta tabla se detallan los Empleados registrados en el sistema de este centro medico.</p>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -195,14 +195,14 @@
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) { ?>
                                             <tr>
-                                                <?php $idDoctor =  $row['idEmpleado'];?>
+                                                <?php $idEmp =  $row['idEmpleado'];?>
                                                 <td><?php echo $row['nombreEmpleado']  ?></td>
                                                 <td><?php echo $row['apellidosEmpleado']  ?></td>
                                                 <td><?php echo $row['cedulaEmpleado']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoEmpleado']."<br>Correo: ".$row['correoEmpleado']  ?></td>
                                                 <td><?php echo $row['especialidad']  ?></td>
                                                 <td><?php echo $row['nombreRol']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarEmpleado.php?id=$idDoctor'>Modificar</a><br><a href='../scriptsSQL/deleteEmpleado.php?id=$idDoctor'>Eliminar</a>" ?></th>
+                                                <th><?php echo "<a href='../formularios/editarEmpleado.php?id=$idEmp'>Modificar</a><br><a href='../scriptsSQL/deleteEmpleado.php?id=$idEmp'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

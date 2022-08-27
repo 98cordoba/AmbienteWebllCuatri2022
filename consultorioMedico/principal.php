@@ -65,7 +65,7 @@
                             </a>
                             <div class="collapse" id="collapseDoctor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="./formularios/registrarDoctor.php">Agregar Doctor</a>
+                                    <a class="nav-link" href="./formularios/registrarEmpleado.php">Agregar Doctor</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCitas" aria-expanded="false" aria-controls="collapseLayouts">

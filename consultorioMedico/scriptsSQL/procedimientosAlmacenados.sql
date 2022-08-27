@@ -109,7 +109,7 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaPaciente`(in pnombrePaciente va
 END$$
             /* EMPLEADOS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaEmpleado`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaEmpleado`(in pnombreEmpleado varchar(45), in papellidosEmpleado VARCHAR(45), in pcedulaEmpleado varchar(20) ,in ptelefonoEmpleado varchar(20), in pcorreoEmpleado VARCHAR(45), in pespecialidad varchar(45) ,in pusuario int,in pidEmpleado int)
+CREATE PROCEDURE `consultoriomedico`.`spActualizaEmpleado`(in pnombreEmpleado varchar(45), in papellidosEmpleado VARCHAR(45), in pcedulaEmpleado varchar(20) ,in ptelefonoEmpleado varchar(20), in pcorreoEmpleado VARCHAR(45), in pespecialidad varchar(45) ,in psalario int,in pusuario int,in pidEmpleado int)
     BEGIN
 	update empleados 
             set nombreEmpleado     = pnombreEmpleado, 
@@ -118,6 +118,7 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaEmpleado`(in pnombreEmpleado va
                 telefonoEmpleado   = ptelefonoEmpleado,
                 correoEmpleado     = pcorreoEmpleado,
                 especialidad       = pespecialidad,
+                salario            = psalario,
                 usuario            = pusuario
     where idEmpleado = pidEmpleado;
 END$$

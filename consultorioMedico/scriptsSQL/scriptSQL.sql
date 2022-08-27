@@ -34,6 +34,7 @@ INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsua
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (4,'TI','123',4);
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (5,'Joseph','123',2);
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (6,'Donnkan','123',3);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (7,'Doctor','123',5);
 /* ********************________TABLA EMPLEADOS___________******************** */
 CREATE TABLE `consultoriomedico`.`empleados` (
   idEmpleado          INT NOT NULL AUTO_INCREMENT,

@@ -6,11 +6,11 @@
   }
   #Asignacion de la sesion en Variables
   $tipoUsuario = $_SESSION['rol'];
-  $idDoc=$_GET['id'];
-  $tDoctorSELECT = "SELECT d.nombreDoctor, d.apellidosDoctor, d.cedulaDoctor, d.telefonoDoctor, d.correoDoctor, d.especialidad, tu.tipoDeUsuario 
-  FROM doctor d JOIN tipousuario tu on d.tipoUsuario = tu.idtipoUsuario
-  where d.idDoctor = ".$idDoc;
-  $resultado = $mysqli->query($tDoctorSELECT); #Consulta de la tabla Doctores
+  $idEmp=$_GET['id'];
+  $TEmpleadoSELECT = "SELECT e.idEmpleado, e.nombreEmpleado, e.apellidosEmpleado, e.cedulaEmpleado, e.telefonoEmpleado, e.correoEmpleado, e.especialidad, e.salario, r.nombreRol 
+ FROM empleados e JOIN usuarios u on u.idUsuario = e.usuario JOIN roles r on r.idRol = u.rol
+ where e.idEmpleado = ".$idEmp;
+  $resultado = $mysqli->query($TEmpleadoSELECT); #Consulta de la tabla Doctores
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,27 +35,27 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Modificar</h3></div>
                                     <div class="card-body">
-                                        <form method="Post" action="../scriptsSQL/updateDoctor.php"> 
+                                        <form method="Post" action="../scriptsSQL/updateEmpleado.php"> 
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="doctorID"
-                                                        value="<?php  echo "$idDoc"; ?>" />
+                                                        <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="empleadoID"
+                                                        value="<?php  echo "$idEmp"; ?>" />
                                                     </div>
                                                 </div>
                                             </div>   
                                         <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="doctorNombre"
-                                                        value="<?php echo $row['nombreDoctor']  ?>"/>
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="empleadoNombre"
+                                                        value="<?php echo $row['nombreEmpleado']  ?>"/>
                                                         <label for="inputFirstName">Nombre del Doctor</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="doctorApellidos"
-                                                        value="<?php echo $row['apellidosDoctor']  ?>"/>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="empleadoApellidos"
+                                                        value="<?php echo $row['apellidosEmpleado']  ?>"/>
                                                         <label for="inputLastName">Apellidos del Doctor</label>
                                                     </div>
                                                 </div>
@@ -63,15 +63,15 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="Text" placeholder="Enter your first name" name="doctorEspecialidad"
+                                                        <input class="form-control" id="inputFirstName" type="Text" placeholder="Enter your first name" name="empleadoEspecialidad"
                                                         value="<?php echo $row['especialidad']  ?>"/>
                                                         <label for="inputFirstName">Especialidad</label> <!-- Cambiar por select group -->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="number" placeholder="Enter your last name" name="doctorCedula"
-                                                        value="<?php echo $row['cedulaDoctor']  ?>"/>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="empleadoCedula"
+                                                        value="<?php echo $row['cedulaEmpleado']  ?>"/>
                                                         <label for="inputLastName">Cedula</label>
                                                     </div>
                                                 </div>
@@ -79,24 +79,42 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="doctorTelefono"
-                                                        value="<?php echo $row['telefonoDoctor']  ?>"/>
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="empleadoTelefono"
+                                                        value="<?php echo $row['telefonoEmpleado']  ?>"/>
                                                         <label for="inputFirstName">Numero Telefonico</label>
                                                     </div>
-                                                </div>
+                                                 </div>
                                                  <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="doctorTpUsuario"
-                                                        value="<?php echo $row['tipoDeUsuario']  ?>"/>
-                                                        <label for="inputFirstName">Tipo de usuario</label>
-                                                    </div>
-                                                 </div>                                                           
+                                                    <input class="form-control" id="inputSalario" type="number" placeholder="Salario" name="empleadoSalario"/>
+                                                        <label for="inputSalario">Salario</label>                                                       
+                                                    </div> 
+                                                </div>
                                             </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="doctorCorreo"
-                                                value="<?php echo $row['correoDoctor'] ?>"/>
-                                                <label for="inputEmail">Email address</label>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                  <div class="form-floating mb-3 mb-md-0">
+                                                    Rol de trabajo:
+                                                    <select id="rol" class="form-control" name="user" select="user">
+                                                        
+                                                        <?php
+                                                        $sql = "SELECT idUsuario, nombreUsuario FROM usuarios";
+                                                        $resultset = mysqli_query($mysqli, $sql);
+                                                        while( $rows = mysqli_fetch_assoc($resultset) ) { 
+                                                        ?>
+                                                        <option value="<?php echo $rows["idUsuario"]; ?>"><?php echo $rows["nombreUsuario"]; ?></option>
+                                                        <?php }	?>
+                                                    </select>    
+                                                  </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="empleadoCorreo"
+                                                    value="<?php echo $row['correoEmpleado'] ?>"/>
+                                                    <label for="inputEmail">Email address</label>
+                                                </div>
                                             </div>
+                                            </div> 
                                             <div class="mt-4 mb-0">
                                             <button type="submit" class="btn btn-primary" >Actualizar Doctor</button>
                                             </div>
