@@ -57,9 +57,9 @@ CREATE PROCEDURE `consultoriomedico`.`spInsertarEmpleado`(in pnombreEmpleado var
 END$$
             /* PACIENTES */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarPaciente`$$
-CREATE PROCEDURE `consultoriomedico`.`spInsertarPaciente`(in pnombrePaciente varchar(45), in papellidosPaciente varchar(45), in pcedulaPaciente varchar(20), in pfechaNacimiento varchar(10), in ptelefonoPaciente varchar(20), in pcorreoPaciente varchar(45))
+CREATE PROCEDURE `consultoriomedico`.`spInsertarPaciente`(in pnombrePaciente varchar(45), in papellidosPaciente varchar(45), in pcedulaPaciente varchar(20), in pfechaNacimiento varchar(10), in ptelefonoPaciente varchar(20), in pcorreoPaciente varchar(45),in pexpediente int)
     BEGIN
-	INSERT INTO pacientes(nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente)VALUES(pnombrePaciente, papellidosPaciente , pcedulaPaciente ,pfechaNacimiento , ptelefonoPaciente , pcorreoPaciente);
+	INSERT INTO pacientes(nombrePaciente,apellidosPaciente,cedulaPaciente,fechaNacimiento,telefonoPaciente,correoPaciente,expediente)VALUES(pnombrePaciente, papellidosPaciente , pcedulaPaciente ,pfechaNacimiento , ptelefonoPaciente , pcorreoPaciente, pexpediente);
 END$$
             /* CITAS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarCita`$$
@@ -78,21 +78,21 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaRol`(in ptipoDeUsuario varchar(
 END$$
             /* USUARIOS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaUsuario`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaUsuario`(in pnombreUsuario varchar(45), in ppasswordUsuario VARCHAR(45), in ptipoUsuario int, in pidUsuarios int)
+CREATE PROCEDURE `consultoriomedico`.`spActualizaUsuario`(in pnombreUsuario varchar(45), in ppasswordUsuario VARCHAR(45), in ptipoUsuario int, in pidUsuario int)
     BEGIN
 	update usuarios 
             set nombreUsuario    = pnombreUsuario, 
                 passwordUsuario  = ppasswordUsuario,
                 tipoUsuario      = ptipoUsuario
-    where idUsuarios = pidUsuarios;
+    where idUsuario = pidUsuario;
 END$$
             /* CONTRASEÑA */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaContraseña`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaContraseña`(in ppasswordUsuario VARCHAR(45), in pidUsuarios int)
+CREATE PROCEDURE `consultoriomedico`.`spActualizaContraseña`(in ppasswordUsuario VARCHAR(45), in pidUsuario int)
     BEGIN
 	update usuarios 
             set passwordUsuario = ppasswordUsuario
-    where idUsuarios = pidUsuarios;
+    where idUsuario = pidUsuario;
 END$$
             /* PACIENTES */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaPaciente`$$

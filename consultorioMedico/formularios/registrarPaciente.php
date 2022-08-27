@@ -49,7 +49,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputCedula" type="number" placeholder="Cedula" name="pacienteCedula" required/>
+                                                        <input class="form-control" id="inputCedula" type="text" placeholder="Cedula" name="pacienteCedula" required/>
                                                         <label for="inputCedula">Cedula del Paciente</label>
                                                     </div>
                                                 </div>
@@ -73,6 +73,15 @@
                                                         <label for="inputCorreo">Correo</label>
                                                     </div>
                                                 </div>                                                 
+                                            </div>   
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="inputTelefono" type="number" placeholder="Telefono" name="expediente" required/>
+                                                        <label for="inputTelefono">Expediente</label>
+                                                    </div>
+                                                </div>   
+                                                                                                 
                                             </div>                                            
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" onclick="return validarUsuario();">Registrar Paciente</button ></div>
