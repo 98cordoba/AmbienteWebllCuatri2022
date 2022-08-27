@@ -12,7 +12,7 @@
     $where = "WHERE idUsuario=$idUsuario";
  }
  $idPaciente=$_GET['id'];
- $expedienteSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, d.nombreEmpleado, d.apellidosEmpleado, d.cedulaEmpleado
+ $expedienteSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, p.nombrePaciente, p.apellidosPaciente, p.cedulaPaciente, p.expediente , d.nombreEmpleado, d.apellidosEmpleado, d.cedulaEmpleado
  FROM cita cm
  JOIN pacientes p on cm.cidPaciente = p.idPaciente
  JOIN empleados d on cm.doctorAsignado= d.idEmpleado
@@ -169,7 +169,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Expedientes
+                                Expediente
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla Pacientes -->
                                 <table id="datatablesSimple" class="table table-dark table-striped table-borderless">

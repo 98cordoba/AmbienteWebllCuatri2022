@@ -176,6 +176,7 @@
                                             <th>Fecha de nacimiento</th>
                                             <th>Contacto</th>
                                             <th>Expediente</th>
+                                            <th>Agendar Cita</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -187,6 +188,7 @@
                                             <th>Fecha de nacimiento</th>
                                             <th>Contacto</th>
                                             <th>Expediente</th>
+                                            <th>Agendar Cita</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>
@@ -201,6 +203,7 @@
                                                 <td><?php echo $row['fechaNacimiento']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoPaciente']."<br>Correo: ".$row['correoPaciente']  ?></td>
                                                 <td><?php echo " <a href='expediente.php?id=$idPaciente'>Ver expediente</a>" ?></td>
+                                                <td><?php echo " <a href='../formularios/registrarCita.php?id=$idPaciente'>Agendar Cita</a>" ?></td>
                                                 <th><?php echo "<a href='../formularios/editarPaciente.php?id=$idPaciente'>Modificar</a><br><a href='../scriptsSQL/deletePaciente.php?id=$idPaciente'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>

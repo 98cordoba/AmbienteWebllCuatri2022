@@ -6,6 +6,7 @@
  }
  #Asignacion de la sesion en Variables
  $tipoUsuario = $_SESSION['rol'];
+ $idPaciente=$_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,14 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Nuevo paciente</h3></div>
                                     <div class="card-body">
                                         <form method="Post" action="../scriptsSQL/insertCita.php">
+                                        <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="PacienteID"
+                                                        value="<?php  echo "$idPaciente"; ?>" />
+                                                    </div>
+                                                </div>
+                                            </div> 
                                             <div class="row mb-3">
                                             <div class="form-floating mb-3 mb-md-0">
                                                         <textarea class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="descripcionCita"></textarea>
@@ -46,8 +55,19 @@
                                                 </div>   
                                                 <div class="col-md-6"> 
                                                 <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="citaDoc"/>
-                                                        <label for="inputFirstName">ID Doctor</label>
+                                                Doctor
+                                                    <select id="rol" class="form-control" name="doc" select="doc">
+                                                        
+                                                        <?php
+                                                        $sql = "SELECT e.idEmpleado, e.nombreEmpleado, e.apellidosEmpleado FROM empleados e 
+                                                        JOIN usuarios u on u.idUsuario = e.usuario JOIN roles r on r.idRol = u.rol  
+                                                        WHERE r.idRol = 5";
+                                                        $resultset = mysqli_query($mysqli, $sql);
+                                                        while( $rows = mysqli_fetch_assoc($resultset) ) { 
+                                                        ?>
+                                                        <option value="<?php echo $rows["idEmpleado"]; ?>"><?php echo $rows["nombreEmpleado"].' '.$rows["apellidosEmpleado"]; ?></option>
+                                                        <?php }	?>
+                                                    </select>    
                                                     </div>
                                                 </div> 
                                             </div>

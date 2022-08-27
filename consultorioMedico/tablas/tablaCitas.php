@@ -175,7 +175,7 @@
                                 <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
                                     <thead>
                                         <tr>
-                                            <th>Expediente</th>
+                                            <th>Cita</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
@@ -184,7 +184,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Expediente</th>
+                                            <th>Cita</th>
                                             <th>Fecha de la cita</th>
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
