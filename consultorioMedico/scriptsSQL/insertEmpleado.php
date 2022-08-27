@@ -6,7 +6,7 @@ $cedulaEmpleado         = $_POST['doctorCedula'];
 $telefonoEmpleado       = $_POST['doctorTelefono'];
 $correoEmpleado         = $_POST['doctorCorreo'];
 $especialidad           = $_POST['doctorEspecialidad'];
-$salario                = $_POST['doctorTpUsuario'];
+$salario                = $_POST['doctorSalario'];
 $stmt = $mysqli->prepare("Call spInsertarEmpleado(?,?,?,?,?,?,?)");
 $stmt->bind_param("ssssssi",$nombreEmpleado,$apellidosEmpleado,$cedulaEmpleado,$telefonoEmpleado,$correoEmpleado,$especialidad,$salario);
 $stmt->execute();

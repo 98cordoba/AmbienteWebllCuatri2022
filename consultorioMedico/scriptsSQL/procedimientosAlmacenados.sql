@@ -53,7 +53,7 @@ END$$
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarEmpleado`$$
 CREATE PROCEDURE `consultoriomedico`.`spInsertarEmpleado`(in pnombreEmpleado varchar(45), in papellidosEmpleado varchar(45), in pcedulaEmpleado varchar(20), in ptelefonoEmpleado varchar(20) ,in pcorreoEmpleado varchar(45),  in pespecialidad varchar(45), in psalario int)
     BEGIN
-	INSERT INTO empleados(nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)VALUES(pnombreEmpleado,papellidosEmpleado,pcedulaEmpleado,ptelefonoDoctor,pcorreoDoctor,pespecialidad,psalario);
+	INSERT INTO empleados(nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)VALUES(pnombreEmpleado,papellidosEmpleado,pcedulaEmpleado,ptelefonoEmpleado,pcorreoEmpleado,pespecialidad,psalario);
 END$$
             /* PACIENTES */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spInsertarPaciente`$$

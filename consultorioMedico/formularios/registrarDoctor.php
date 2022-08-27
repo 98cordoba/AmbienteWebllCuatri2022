@@ -40,7 +40,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Crear nuevo Doctor</h3></div>
                                     <div class="card-body">
-                                        <form method="Post" action="../scriptsSQL/insertDoctor.php">    
+                                        <form method="Post" action="../scriptsSQL/insertEmpleado.php">    
                                         <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
@@ -64,7 +64,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="number" placeholder="Enter your last name" name="doctorCedula"/>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="doctorCedula"/>
                                                         <label for="inputLastName">Cedula</label>
                                                     </div>
                                                 </div>
