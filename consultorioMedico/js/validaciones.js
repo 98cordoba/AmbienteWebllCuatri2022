@@ -69,3 +69,20 @@ function validarEmpleado() {
     }
     return retorno;
 }
+
+function validarPw() {
+    var retorno = false;
+    try {
+        var pw = document.getElementById('inputPw').value;
+        
+        if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(pw)) {           
+            alert("Formato de nombre y apellidos del paciente incorrectos. \n Por favor verifique sus datos e intente nuevamente.");
+            return retorno;
+        }else{
+                retorno = true;
+            }
+    } catch (error) {
+        retorno = false;
+    }
+    return retorno;
+}
