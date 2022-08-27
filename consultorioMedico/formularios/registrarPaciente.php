@@ -63,8 +63,8 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputTelfono" type="text" placeholder="Telefono" name="pacienteTelefono" required/>
-                                                        <label for="inputTelfono">Numero Telefonico</label>
+                                                        <input class="form-control" id="inputTelefono" type="text" placeholder="Telefono" name="pacienteTelefono" required/>
+                                                        <label for="inputTelefono">Numero Telefonico</label>
                                                     </div>
                                                 </div>   
                                                 <div class="col-md-6">
@@ -75,7 +75,7 @@
                                                 </div>                                                 
                                             </div>                                            
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" >Registrar Paciente</button ></div>
+                                                <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" onclick="return validarUsuario();">Registrar Paciente</button ></div>
                                             </div>
                                         </form>
                                     </div>
@@ -105,5 +105,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
+        <script src="../js/validaciones.js"></script>
     </body>
 </html>

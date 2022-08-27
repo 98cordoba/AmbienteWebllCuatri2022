@@ -78,17 +78,11 @@
                                                 </div>
                                                  <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                    Rol de trabajo:<br />
-                                                    <select name="tipoUsuario" id="rolTrabajo " style="font-size:Medium;width:296px;">
-                                                    
-                                                    </select><br />
-                                                       <!-- <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="doctorTpUsuario"/>
-                                                        <label for="inputFirstName">Tipo de usuario</label> -->
+                                                    <input class="form-control" id="inputSalario" type="number" placeholder="Salario" name="doctorSalario"/>
+                                                        <label for="inputSalario">Salario</label>                                                       
                                                     </div>
-                                                 </div>   
-                                                        
+                                                 </div>                                                           
                                             </div>
-
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" name="doctorCorreo"/>
                                                 <label for="inputEmail">Email address</label>

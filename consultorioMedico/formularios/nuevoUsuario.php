@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php include_once("../conexion/conexion.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +15,7 @@
         <script src="../js/jquery-ui-1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.css">
         <script src="../js/carga.js"></script>
+        
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -46,17 +45,18 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                    Rol de trabajo:<br />
-                                                    <select name="idtipoUsuario" id="idtipoUsuario " style="font-size:Medium;width:296px;">
-                                                    
-                                                    </select><br />
-                                                    <!-- <select class="form-select" aria-label="Default select example">
-                                                    <option selected>Seleccione el rol de trabajo</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                    </select> -->
+                                                    Rol de trabajo:
+                                                    <select id="rol" class="form-control" name="rol" select="rol">
                                                         
+                                                        <?php
+                                                        $sql = "SELECT idtipoUsuario, tipoDeUsuario FROM tipousuario";
+                                                        $resultset = mysqli_query($mysqli, $sql);
+                                                        while( $rows = mysqli_fetch_assoc($resultset) ) { 
+                                                        ?>
+                                                        <option value="<?php echo $rows["idtipoUsuario"]; ?>"><?php echo $rows["tipoDeUsuario"]; ?></option>
+                                                        <?php }	?>
+                                                    </select>                    
+                                                    
                                                     </div>
                                                 </div>
                                             </div>
