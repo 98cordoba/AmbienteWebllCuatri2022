@@ -137,9 +137,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Pacientes
                             </a>
-                            <a class="nav-link" href="../tablas/tablaDoctores.php">
+                            <a class="nav-link" href="../tablas/tablaEmpleados.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tabla de Doctores
+                                Tabla de Empleados
                             </a>
                             <a class="nav-link" href="../tablas/tablaCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

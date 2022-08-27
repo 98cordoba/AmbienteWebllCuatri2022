@@ -208,7 +208,7 @@
                                                 <td><?php echo "Telefono: ".$row['telefonoEmpleado']."<br>Correo: ".$row['correoEmpleado']  ?></td>
                                                 <td><?php echo $row['especialidad']  ?></td>
                                                 <td><?php echo $row['nombreRol']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarDoctor.php?id=$idDoctor'>Modificar</a><br><a href='../scriptsSQL/deleteDoctor.php?id=$idDoctor'>Eliminar</a>" ?></th>
+                                                <th><?php echo "<a href='../formularios/editarEmpleado.php?id=$idDoctor'>Modificar</a><br><a href='../scriptsSQL/deleteEmpleado.php?id=$idDoctor'>Eliminar</a>" ?></th>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

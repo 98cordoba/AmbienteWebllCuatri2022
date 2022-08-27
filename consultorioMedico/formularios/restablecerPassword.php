@@ -1,6 +1,6 @@
 <?php
  session_start(); #Necesario para utilizar sesiones
-$idUser = $_SESSION['idUsuarios'];
+$idUser = $_SESSION['idUsuario'];
 ?>
 
 <!DOCTYPE html>

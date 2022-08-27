@@ -1,11 +1,11 @@
 <?php
  require "../conexion/conexion.php"; #Conexion a la BD
  session_start(); #Necesario para utilizar sesiones 
- if (!isset($_SESSION['idUsuarios'])) { #si no existe sesion activa redirecciona al login
+ if (!isset($_SESSION['idUsuario'])) { #si no existe sesion activa redirecciona al login
     header("Location: index.php");
  }
  #Asignacion de la sesion en Variables
- $tipoUsuario = $_SESSION['tipoUsuario'];
+ $tipoUsuario = $_SESSION['rol'];
  $idUser=$_GET['id'];
  $UsuarioSELECT = "SELECT u.idUsuarios, u.nombreUsuario, u.passwordUsuario, tu.tipoDeUsuario FROM usuarios u
  JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario
