@@ -47,9 +47,9 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT DOCTORES___________******************** */
 INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
-VALUES (1,'Doctor1',"Apellido Doctor1",12345678,'22221111','correoD2@gmail.com','Pediatra',2);
+VALUES (1,'Doctor1',"Apellido1 Apellido2",12345678,'22221111','correoD2@gmail.com','Pediatra',2);
 INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
-VALUES (2,'Doctor2',"Apellido Doctor2",12345679,'11112222','correoD2@gmail.com','Cirujano',2);
+VALUES (2,'Doctor2',"Apellido1 Apellido2",12345679,'11112222','correoD2@gmail.com','Cirujano',2);
 INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
 VALUES (3,'Chi',"Phan Wu",116450808,'22684506','chiph@yahoo.com','Dentista',2);
 INSERT INTO `consultoriomedico`.`doctor` (idDoctor,nombreDoctor,apellidosDoctor,cedulaDoctor,telefonoDoctor,correoDoctor,especialidad,tipoUsuario)
