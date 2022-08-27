@@ -65,8 +65,6 @@
                             <div class="collapse" id="collapsePacientes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="../formularios/registrarPaciente.php">Agregar Paciente</a>
-                                    <a class="nav-link" href="../formularios/registrarPaciente.php">Editar Paciente</a>
-                                    <a class="nav-link" href="../formularios/registrarPaciente.php">Eliminar Paciente</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctor" aria-expanded="false" aria-controls="collapseLayouts">
@@ -77,8 +75,6 @@
                             <div class="collapse" id="collapseDoctor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="../formularios/registrarDoctor.php">Agregar Doctor</a>
-                                    <a class="nav-link" href="../formularios/editarDoctor.php">Editar Doctor</a>
-                                    <a class="nav-link" href="../formularios/registrarDoctor.php">Eliminar Doctor</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCitas" aria-expanded="false" aria-controls="collapseLayouts">
@@ -89,8 +85,6 @@
                             <div class="collapse" id="collapseCitas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="../formularios/registrarCita.php">Agregar Cita</a>
-                                    <a class="nav-link" href="../formularios/registrarDoctor.php">Editar Cita</a>
-                                    <a class="nav-link" href="../formularios/registrarDoctor.php">Eliminar Cita</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -138,9 +132,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tabla de Pacientes
                             </a>
-                            <a class="nav-link" href="../tablas/tablaDoctores.php">
+                            <a class="nav-link" href="../tablas/tablaEmpleados.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tabla de Doctores
+                                Tabla de Empleados
                             </a>
                             <a class="nav-link" href="../tablas/tablaCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
