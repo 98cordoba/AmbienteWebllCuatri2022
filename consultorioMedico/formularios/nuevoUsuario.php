@@ -49,11 +49,11 @@
                                                     <select id="rol" class="form-control" name="rol" select="rol">
                                                         
                                                         <?php
-                                                        $sql = "SELECT idtipoUsuario, tipoDeUsuario FROM tipousuario";
+                                                        $sql = "SELECT idRol, nombreRol FROM roles";
                                                         $resultset = mysqli_query($mysqli, $sql);
                                                         while( $rows = mysqli_fetch_assoc($resultset) ) { 
                                                         ?>
-                                                        <option value="<?php echo $rows["idtipoUsuario"]; ?>"><?php echo $rows["tipoDeUsuario"]; ?></option>
+                                                        <option value="<?php echo $rows["idRol"]; ?>"><?php echo $rows["nombreRol"]; ?></option>
                                                         <?php }	?>
                                                     </select>                    
                                                     
