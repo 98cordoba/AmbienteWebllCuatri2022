@@ -6,19 +6,20 @@
  }
  $idUsuario = $_SESSION['idUsuarios'];
  $tipoUsuario = $_SESSION['tipoUsuario'];
+ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
  
  if (isset($_GET['id'])) {
     $idCitaM=$_GET['id'];
-    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor, d.apellidosDoctor FROM cita cm
+    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
     JOIN doctor d on cm.doctorAsignado = d.idDoctor WHERE cm.idCita =".$idCitaM;
  } else{
-    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor, d.apellidosDoctor, p.nombrePaciente, p.apellidosPaciente FROM cita cm
-    JOIN doctor d on cm.doctorAsignado = d.idDoctor 
-    JOIN pacientes p on cm.cidPaciente = p.idPaciente";
+    $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, d.nombreDoctor FROM cita cm
+    JOIN doctor d on cm.doctorAsignado = d.idDoctor ";
  }
+ 
+
  $resultado = $mysqli->query($tCitasSELECT); #Consulta de la tabla Citas
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -179,7 +180,7 @@
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
                                             <th>Acciones</th>
-                                            <th>Paciente</th>
+                                            <th>url</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -189,7 +190,7 @@
                                             <th>Descripcion</th>
                                             <th>Doctor Asignado</th>
                                             <th>Acciones</th>
-                                            <th>Paciente</th>
+                                            <th>url</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -200,9 +201,9 @@
                                                 <td><?php echo $row['idCita']  ?></td>
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
-                                                <td><?php echo $row['nombreDoctor'].' '.$row['apellidosDoctor'] ?></td>                                                
+                                                <td><?php echo $row['nombreDoctor']  ?></td>
                                                 <th><?php echo "<a href='../formularios/editarCita.php?id=$idCitaM'>Modificar</a><br><a href='../formularios/eliminarDoctor.php?id=$idCitaM'>Eliminar</a>" ?></th>
-                                                <td><?php echo $row['nombrePaciente'].' '.$row['apellidosPaciente']  ?>  </td>
+                                                <td><?php echo $url  ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

@@ -19,6 +19,14 @@
         <title>Registrar Doctores</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.5.1.js"></script>
+        <script src="../js/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.css">
+        <script src="../js/carga.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+        <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -68,8 +76,12 @@
                                                 </div>
                                                  <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="doctorTpUsuario"/>
-                                                        <label for="inputFirstName">Tipo de usuario</label>
+                                                    Rol de trabajo:<br />
+                                                    <select name="tipoUsuario" id="rolTrabajo " style="font-size:Medium;width:296px;">
+                                                    
+                                                    </select><br />
+                                                       <!-- <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="doctorTpUsuario"/>
+                                                        <label for="inputFirstName">Tipo de usuario</label> -->
                                                     </div>
                                                  </div>   
                                                         

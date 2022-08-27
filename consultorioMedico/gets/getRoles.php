@@ -1,5 +1,6 @@
 <?php
 require "../conexion/conexion.php"; #Conexion a la BD
+#$conexion =     $mysqli;
 function getArray($sql){
     $mysqli = new mysqli("localhost", "root", "", "consultoriomedico"); #conexion a BD
     //Creamos la conexión con la función anterior $conexion = connectDB();

@@ -86,7 +86,7 @@
                                                 </div>
                                                  <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="number" placeholder="Enter your first name" name="doctorTpUsuario"
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="doctorTpUsuario"
                                                         value="<?php echo $row['tipoDeUsuario']  ?>"/>
                                                         <label for="inputFirstName">Tipo de usuario</label>
                                                     </div>
