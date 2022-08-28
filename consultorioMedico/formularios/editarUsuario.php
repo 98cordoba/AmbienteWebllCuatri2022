@@ -7,9 +7,9 @@
  #Asignacion de la sesion en Variables
  $tipoUsuario = $_SESSION['rol'];
  $idUser=$_GET['id'];
- $UsuarioSELECT = "SELECT u.idUsuarios, u.nombreUsuario, u.passwordUsuario, tu.tipoDeUsuario FROM usuarios u
- JOIN tipousuario tu on u.tipoUsuario = tu.idtipoUsuario
- where u.idUsuarios = ".$idUser;
+ $UsuarioSELECT = "SELECT u.idUsuario, u.nombreUsuario, u.passwordUsuario, tu.nombreRol FROM usuarios u
+ JOIN roles tu on u.rol = tu.idRol
+ where u.idUsuario = ".$idUser;
  $resultado = $mysqli->query($UsuarioSELECT); #Consulta de los datos del usuario
 ?>
 <!DOCTYPE html>
@@ -63,9 +63,17 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputTipoUsuario" type="text"  name="tipoUsuario"
-                                                         value="<?php echo $row['tipoDeUsuario'] ?>" /> 
-                                                        <label for="inputFirstName"> Tipo de Usuario</label> 
+                                                    Rol de trabajo:
+                                                    <select id="rol" class="form-control" name="rol" select="rol">
+                                                        
+                                                        <?php
+                                                        $sql = "SELECT idRol, nombreRol FROM roles";
+                                                        $resultset = mysqli_query($mysqli, $sql);
+                                                        while( $rows = mysqli_fetch_assoc($resultset) ) { 
+                                                        ?>
+                                                        <option value="<?php echo $rows["idRol"]; ?>"><?php echo $rows["nombreRol"]; ?></option>
+                                                        <?php }	?>
+                                                    </select>   
                                                     </div>
                                                 </div>
                                             </div>

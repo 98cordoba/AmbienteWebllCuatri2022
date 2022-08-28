@@ -78,12 +78,12 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaRol`(in ptipoDeUsuario varchar(
 END$$
             /* USUARIOS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaUsuario`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaUsuario`(in pnombreUsuario varchar(45), in ppasswordUsuario VARCHAR(45), in ptipoUsuario int, in pidUsuario int)
+CREATE PROCEDURE `consultoriomedico`.`spActualizaUsuario`(in pnombreUsuario varchar(45), in ppasswordUsuario VARCHAR(45), in pRol int, in pidUsuario int)
     BEGIN
 	update usuarios 
             set nombreUsuario    = pnombreUsuario, 
                 passwordUsuario  = ppasswordUsuario,
-                tipoUsuario      = ptipoUsuario
+                rol      = pRol
     where idUsuario = pidUsuario;
 END$$
             /* CONTRASEÑA */

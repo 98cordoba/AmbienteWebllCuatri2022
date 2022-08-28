@@ -65,7 +65,11 @@
                             </a>
                             <div class="collapse" id="collapseEmpleado" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+<<<<<<< HEAD
                                     <a class="nav-link" href="./formularios/registrarEmpleado.php">Agregar Empleado</a>
+=======
+                                    <a class="nav-link" href="./formularios/registrarEmpleado.php">Agregar Doctor</a>
+>>>>>>> 6a40a144e1f5d6c7feba682f6026b5817f2d1715
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCitas" aria-expanded="false" aria-controls="collapseLayouts">
@@ -178,12 +182,12 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Usuarios</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="./menus/menuEmpleados.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="./menus/menuUsuarios.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>                      
+                        </div>                        
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto"> <!-- Footer -->
