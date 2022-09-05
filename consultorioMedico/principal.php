@@ -41,13 +41,29 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Estadisticas</div>
+                            <div class="sb-sidenav-menu-heading">Menus</div>
                             <a class="nav-link" href="principal.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Princial
+                            </a>
+                            <a class="nav-link" href="./menus/menuCitas.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-medical"></i></div>
+                                Citas
+                            </a>
+                            <a class="nav-link" href="./menus/menuEmpleados.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user fa-fw"></i></div>
+                                Empleados
+                            </a>
+                            <a class="nav-link" href="./menus/menuPacientes.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user fa-fw"></i></div>
+                                Pacientes
+                            </a>
+                            <a class="nav-link" href="./menus/menuUsuarios.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user fa-fw"></i></div>
+                                Usuarios
                             </a>
                             <?php if($rol == 1){ ?>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <div class="sb-sidenav-menu-heading">Opciones</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePacientes" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Pacientes
@@ -56,6 +72,10 @@
                             <div class="collapse" id="collapsePacientes" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="./formularios/registrarPaciente.php">Agregar Paciente</a>
+                                    <a class="nav-link" href="./tablas/tablaPacientes.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Tabla de Pacientes
+                                    </a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEmpleado" aria-expanded="false" aria-controls="collapseLayouts">
@@ -66,6 +86,10 @@
                             <div class="collapse" id="collapseEmpleado" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="./formularios/registrarEmpleado.php">Agregar Empleado</a>
+                                    <a class="nav-link" href="./tablas/tablaEmpleados.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Tabla de Empleados
+                                    </a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCitas" aria-expanded="false" aria-controls="collapseLayouts">
@@ -75,62 +99,27 @@
                             </a>
                             <div class="collapse" id="collapseCitas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="./formularios/registrarCita.php">Agregar Cita</a>
+                                    <a class="nav-link" href="./tablas/tablaCitas.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Tabla de Citas
+                                    </a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Medicamentos
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUser" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Usuarios
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <div class="collapse" id="collapseUser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="./formularios/nuevoUsuario.php">Agregar Usuario</a>
+                                    <a class="nav-link" href="./tablas/tablaUsuarios.php">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Tabla de Usuarios
                                     </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="./errores/401.html">401 Page</a>
-                                            <a class="nav-link" href="./errores/404.html">404 Page</a>
-                                            <a class="nav-link" href="./errores/500.html">500 Page</a>
-                                        </nav>
-                                    </div>
                                 </nav>
                             </div>
                             <?php } ?>
-                            <div class="sb-sidenav-menu-heading">Tablas</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Citas
-                            </a>
-                            <a class="nav-link" href="./tablas/tablaUsuarios.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tabla de Usuarios
-                            </a>
-                            <a class="nav-link" href="./tablas/tablaPacientes.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tabla de Pacientes
-                            </a>
-                            <a class="nav-link" href="./tablas/tablaEmpleados.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tabla de Empleados
-                            </a>
-                            <a class="nav-link" href="./tablas/tablaCitas.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tabla de Citas
-                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -142,25 +131,25 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Principal</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Menu Principal</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Pacientes</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="./menus/menuPacientes.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="./menus/menuPacientes.php">Menu</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Empleado</div>
+                                    <div class="card-body">Empleados</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="./menus/menuEmpleados.php">Menu</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -169,7 +158,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Citas</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="./menus/menuCitas.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="./menus/menuCitas.php">Menu</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -178,7 +167,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body">Usuarios</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="./menus/menuEmpleados.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="./menus/menuUsuarios.php">Menu</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

@@ -6,8 +6,6 @@
  }
  #Asignacion de la sesion en Variables
  $tipoUsuario = $_SESSION['rol'];
-
- 
 ?>
 <!DOCTYPE html>
 <html lang="en">

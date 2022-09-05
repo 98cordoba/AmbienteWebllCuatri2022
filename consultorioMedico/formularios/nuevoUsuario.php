@@ -1,5 +1,4 @@
 <?php include_once("../conexion/conexion.php");?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +14,6 @@
         <script src="../js/jquery-ui-1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.css">
         <script src="../js/carga.js"></script>
-        
     </head>
     <body class="bg-primary">
         <div id="layoutAuthentication">
@@ -47,7 +45,6 @@
                                                     <div class="form-floating">
                                                     Rol de trabajo:
                                                     <select id="rol" class="form-control" name="rol" select="rol">
-                                                        
                                                         <?php
                                                         $sql = "SELECT idRol, nombreRol FROM roles";
                                                         $resultset = mysqli_query($mysqli, $sql);
@@ -56,12 +53,11 @@
                                                         <option value="<?php echo $rows["idRol"]; ?>"><?php echo $rows["nombreRol"]; ?></option>
                                                         <?php }	?>
                                                     </select>                    
-                                                    
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                            <button type="submit" class="btn btn-primary" >Registrarme</button>
+                                            <button type="submit" class="btn btn-primary" >Registrar</button>
                                             </div>
                                         </form>
                                     </div>

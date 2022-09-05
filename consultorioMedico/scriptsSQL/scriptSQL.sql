@@ -29,12 +29,13 @@ DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT USUARIOS___________******************** */
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (1,'admin','123',1);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (2,'consul','123',2);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (3,'recep','123',3);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (2,'Joseph','123',1);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (3,'Donnkan','123',1);
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (4,'TI','123',4);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (5,'Joseph','123',2);
-INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (6,'Donnkan','123',3);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (5,'consul','123',2);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (6,'recepcion','123',3);
 INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (7,'Doctor','123',5);
+INSERT INTO `consultoriomedico`.`usuarios` (idUsuario,nombreUsuario,passwordUsuario,rol) VALUES (8,'RH','123',6);
 /* ********************________TABLA EMPLEADOS___________******************** */
 CREATE TABLE `consultoriomedico`.`empleados` (
   idEmpleado          INT NOT NULL AUTO_INCREMENT,
@@ -52,18 +53,20 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_spanish_ci;
 /* ********************________INSERT EMPLEADOS___________******************** */
-INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
-VALUES (1,'Joseph Fabian',"Cordoba Aguero ",'207860359','70148852','fabiansb98@gmail.com','Administrador',10000);
-INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
-VALUES (2,'Donnkan',"Cervantes",'207860359','11111111','donnkan@gmail.com','Administrador',10000);
-INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
-VALUES (3,'Alicia',"Fernandes Valverde ",'101163671','22221111','correoD2@gmail.com','Pediatra',1000);
-INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
-VALUES (4,'Jose Vicente',"Fallas Mena",'101270810','11112222','correoD2@gmail.com','Cirujano',5000);
-INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
-VALUES (5,'Chi',"Phan Wu",'116450808','22684506','chiph@yahoo.com','Dentista',2000);
-INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario)
-VALUES (6,'Alberto',"Molina Mora",'601450889','44042209','albertomm@hotmail.com','Medicina General',4000);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (1,'Joseph Fabian',"Cordoba Aguero ",'207860359','70148852','fabiansb98@gmail.com','Administrador',10000,2);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (2,'Donnkan',"Cervantes",'207860359','11111111','donnkan@gmail.com','Administrador',10000,3);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (3,'Alicia',"Fernandes Valverde ",'101163671','22221111','correoD2@gmail.com','Recursos Humanos',1000,8);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (4,'Jose Vicente',"Fallas Mena",'101270810','11112222','correoD2@gmail.com','Cirujano',5000,7);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (5,'Chi',"Phan Wu",'116450808','22684506','chiph@yahoo.com','Secretaria',2000,6);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (6,'Alberto',"Molina Mora",'601450889','44042209','albertomm@hotmail.com','Especialista',4000,5);
+INSERT INTO `consultoriomedico`.`empleados` (idEmpleado,nombreEmpleado,apellidosEmpleado,cedulaEmpleado,telefonoEmpleado,correoEmpleado,especialidad,salario,usuario)
+VALUES (7,'Admin',"Apellidos Admin",'111111111','22222222','correoAdmin@gmail.com','Administrador',10000,1);
 /* ********************________TABLA PACIENTES___________******************** */
 CREATE TABLE `consultoriomedico`.`pacientes` (
   idPaciente            INT NOT NULL AUTO_INCREMENT,

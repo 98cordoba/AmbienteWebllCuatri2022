@@ -8,7 +8,7 @@ $telefonoEmpleado       = $_POST['empleadoTelefono'];
 $correoEmpleado         = $_POST['empleadoCorreo'];
 $especialidad           = $_POST['empleadoEspecialidad'];
 $salario                = $_POST['empleadoSalario'];
-$user                    = $_POST['user'];
+$user                   = $_POST['user'];
 $stmt = $mysqli->prepare("Call spActualizaEmpleado(?,?,?,?,?,?,?,?,?)");
 $stmt->bind_param("ssssssiii",$nombreEmpleado,$apellidosEmpleado,$cedulaEmpleado,$telefonoEmpleado,$correoEmpleado,$especialidad,$salario,$user,$idEmpleado);
 $stmt->execute();

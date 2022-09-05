@@ -2,7 +2,6 @@
  session_start(); #Necesario para utilizar sesiones
 $idUser = $_SESSION['idUsuario'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +10,7 @@ $idUser = $_SESSION['idUsuario'];
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Registrarme</title>
+        <title>Restablecer Contraseña</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <script src="../js/jquery-3.5.1.js"></script>
@@ -40,7 +39,7 @@ $idUser = $_SESSION['idUsuario'];
                                             <div class="row mb-3">    
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="passwd"/>
+                                                        <input class="form-control" id="inputPssw" type="text" placeholder="Enter your last name" name="passwd"/>
                                                         <label for="inputLastName">Nueva Contraseña</label>
                                                     </div>
                                                 </div>
@@ -48,13 +47,13 @@ $idUser = $_SESSION['idUsuario'];
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="Text" placeholder="Enter your first name" name="passwordUsuario"/>
+                                                        <input class="form-control" id="inputConPssw" type="Text" placeholder="Enter your first name" name="passwordUsuario"/>
                                                         <label for="inputFirstName">Confirmar Contraseña</label> 
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                            <button type="submit" class="btn btn-primary" >Restablecer Contraseña</button>
+                                            <button type="submit" class="btn btn-primary" onclick="return validarPasword();">Restablecer Contraseña</button>
                                             </div>
                                         </form>
                                     </div>
@@ -84,5 +83,6 @@ $idUser = $_SESSION['idUsuario'];
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
+        <script src="../js/validaciones.js"></script>
     </body>
 </html>

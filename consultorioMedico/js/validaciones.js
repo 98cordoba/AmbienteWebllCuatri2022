@@ -15,7 +15,6 @@ function validarIngreso() {
     return retorno;
 }
 
-
 // /^\s+$/ busca si el string esta en blanco
 
 function validarUsuario() {
@@ -50,7 +49,6 @@ function validarEmpleado() {
         var nombre = document.getElementById('inputNombre').value;
         var cedula = document.getElementById('inputCedula').value;
         var telefono = document.getElementById('inputTelefono').value;
-
         if ((nombre == null || nombre.length == 1 || /^\s+$/.test(nombre))) {           
             alert("Formato de nombre y apellidos del paciente incorrectos. \n Por favor verifique sus datos e intente nuevamente.");
             return retorno;
@@ -70,17 +68,22 @@ function validarEmpleado() {
     return retorno;
 }
 
-function validarPw() {
+function validarPasword(){
     var retorno = false;
     try {
-        var pw = document.getElementById('inputPw').value;
-        
-        if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(pw)) {           
-            alert("Formato de nombre y apellidos del paciente incorrectos. \n Por favor verifique sus datos e intente nuevamente.");
-            return retorno;
-        }else{
+        var passw = document.getElementById('inputPssw').value;
+        var passwConfirma = document.getElementById('inputConPssw').value;
+        if (passw === passwConfirma) {
+            if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(passw)) {           
+                alert("Por favor verifique sus datos e intente nuevamente.");
+                 retorno = false;
+            } else {
                 retorno = true;
             }
+        }else{
+            retorno = false;
+            alert("Las contraseñas no coinciden");
+        }
     } catch (error) {
         retorno = false;
     }

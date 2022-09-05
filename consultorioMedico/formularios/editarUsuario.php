@@ -7,8 +7,8 @@
  #Asignacion de la sesion en Variables
  $tipoUsuario = $_SESSION['rol'];
  $idUser=$_GET['id'];
- $UsuarioSELECT = "SELECT u.idUsuario, u.nombreUsuario, u.passwordUsuario, tu.nombreRol FROM usuarios u
- JOIN roles tu on u.rol = tu.idRol
+ $UsuarioSELECT = "SELECT u.idUsuario, u.nombreUsuario, u.passwordUsuario, rl.nombreRol FROM usuarios u
+ JOIN roles rl on u.rol = rl.idRol
  where u.idUsuario = ".$idUser;
  $resultado = $mysqli->query($UsuarioSELECT); #Consulta de los datos del usuario
 ?>
@@ -64,8 +64,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                     Rol de trabajo:
-                                                    <select id="rol" class="form-control" name="rol" select="rol">
-                                                        
+                                                    <select id="rol" class="form-control" name="rol" select="rol">     
                                                         <?php
                                                         $sql = "SELECT idRol, nombreRol FROM roles";
                                                         $resultset = mysqli_query($mysqli, $sql);

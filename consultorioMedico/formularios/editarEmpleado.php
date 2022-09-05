@@ -20,7 +20,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Modificar Doctor</title>
+        <title>Modificar Empleado</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -86,7 +86,8 @@
                                                  </div>
                                                  <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                    <input class="form-control" id="inputSalario" type="number" placeholder="Salario" name="empleadoSalario"/>
+                                                    <input class="form-control" id="inputSalario" type="number" placeholder="Salario" name="empleadoSalario"
+                                                    value="<?php echo $row['salario']  ?>"/>
                                                         <label for="inputSalario">Salario</label>                                                       
                                                     </div> 
                                                 </div>
@@ -94,9 +95,8 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                   <div class="form-floating mb-3 mb-md-0">
-                                                    Rol de trabajo:
-                                                    <select id="rol" class="form-control" name="user" select="user">
-                                                        
+                                                    Usuario
+                                                    <select id="rol" class="form-control" name="user" select="user">   
                                                         <?php
                                                         $sql = "SELECT idUsuario, nombreUsuario FROM usuarios";
                                                         $resultset = mysqli_query($mysqli, $sql);

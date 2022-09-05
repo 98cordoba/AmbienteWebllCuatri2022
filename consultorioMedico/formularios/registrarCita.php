@@ -8,7 +8,6 @@
  $tipoUsuario = $_SESSION['rol'];
  $idPaciente=$_GET['id'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Registrar Paciente</title>
+        <title>Registrar Cita</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -29,10 +28,10 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Nuevo paciente</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Nuevo Cita</h3></div>
                                     <div class="card-body">
                                         <form method="Post" action="../scriptsSQL/insertCita.php">
-                                        <div class="row mb-3">
+                                            <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="PacienteID"
@@ -50,14 +49,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
                                                         <input class="form-control" id="inputLastName" type="date" placeholder="Enter your last name" name="fechaCita" />
-                                                        <label for="inputLastName">Fecha de Nacimiento</label>
+                                                        <label for="inputLastName">Fecha de la Cita</label>
                                                     </div>
                                                 </div>   
                                                 <div class="col-md-6"> 
                                                 <div class="form-floating mb-3 mb-md-0">
                                                 Doctor
                                                     <select id="rol" class="form-control" name="doc" select="doc">
-                                                        
                                                         <?php
                                                         $sql = "SELECT e.idEmpleado, e.nombreEmpleado, e.apellidosEmpleado FROM empleados e 
                                                         JOIN usuarios u on u.idUsuario = e.usuario JOIN roles r on r.idRol = u.rol  
