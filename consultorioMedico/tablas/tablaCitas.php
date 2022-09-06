@@ -187,7 +187,7 @@
                                                 <td><?php echo $row['fechaCita']  ?></td>
                                                 <td><?php echo $row['descripcion']  ?></td>
                                                 <td><?php echo $row['nombreEmpleado']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarCita.php?id=$idCitaM'>Modificar</a><br><a href='../formularios/eliminarDoctor.php?id=$idCitaM'>Eliminar</a>" ?></th>
+                                                <td><?php echo "<a class='link-success' href='../formularios/editarCita.php?id=$idCitaM'>Modificar</a><br><a class='link-success' href='../formularios/eliminarDoctor.php?id=$idCitaM'>Eliminar</a>" ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

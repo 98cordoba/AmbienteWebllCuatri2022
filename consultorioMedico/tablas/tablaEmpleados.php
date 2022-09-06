@@ -192,7 +192,7 @@
                                                 <td><?php echo "Telefono: ".$row['telefonoEmpleado']."<br>Correo: ".$row['correoEmpleado']  ?></td>
                                                 <td><?php echo $row['especialidad']  ?></td>
                                                 <td><?php echo $row['nombreRol']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarEmpleado.php?id=$idEmp'>Modificar</a><br><a href='../scriptsSQL/deleteEmpleado.php?id=$idEmp'>Eliminar</a>" ?></th>
+                                                <td><?php echo "<a class='link-success' href='../formularios/editarEmpleado.php?id=$idEmp'>Modificar</a><br><a class='link-success' href='../scriptsSQL/deleteEmpleado.php?id=$idEmp'>Eliminar</a>" ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

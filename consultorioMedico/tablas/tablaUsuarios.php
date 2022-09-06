@@ -179,7 +179,7 @@
                                             <tr><?php $idUsuario = $row['idUsuario']  ?>
                                                 <td><?php echo $row['nombreUsuario']  ?></td>
                                                 <td><?php echo $row['nombreRol']  ?></td>
-                                                <th><?php echo "<a href='../formularios/editarUsuario.php?id=$idUsuario'>Modificar</a><br><a href='../scriptsSQL/deleteUsuario.php?id=$idUsuario'>Eliminar</a>" ?></th>
+                                                <td><?php echo "<a class='link-success' href='../formularios/editarUsuario.php?id=$idUsuario'>Modificar</a><br><a class='link-success' href='../scriptsSQL/deleteUsuario.php?id=$idUsuario'>Eliminar</a>" ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>

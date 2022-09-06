@@ -192,9 +192,9 @@
                                                 <td><?php echo $row['cedulaPaciente']  ?></td>
                                                 <td><?php echo $row['fechaNacimiento']  ?></td>
                                                 <td><?php echo "Telefono: ".$row['telefonoPaciente']."<br>Correo: ".$row['correoPaciente']  ?></td>
-                                                <td><?php echo " <a href='expediente.php?id=$idPaciente'>Ver expediente</a>" ?></td>
-                                                <td><?php echo " <a href='../formularios/registrarCita.php?id=$idPaciente'>Agendar Cita</a>" ?></td>
-                                                <th><?php echo "<a href='../formularios/editarPaciente.php?id=$idPaciente'>Modificar</a><br><a href='../scriptsSQL/deletePaciente.php?id=$idPaciente'>Eliminar</a>" ?></th>
+                                                <td><?php echo "<a class='link-success' href='expediente.php?id=$idPaciente'>Ver expediente</a>" ?></td>
+                                                <td><?php echo "<a class='link-success' href='../formularios/registrarCita.php?id=$idPaciente'>Agendar Cita</a>" ?></td>
+                                                <td><?php echo "<a class='link-success' href='../formularios/editarPaciente.php?id=$idPaciente'>Modificar</a><br><a class='link-success' href='../scriptsSQL/deletePaciente.php?id=$idPaciente'>Eliminar</a>" ?></td>
                                             </tr>
                                             <?php } ?>
                                     </tbody>
