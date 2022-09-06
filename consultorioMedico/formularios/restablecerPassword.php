@@ -26,8 +26,8 @@ $idUser = $_SESSION['idUsuario'];
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Bienvenido</h3><br><h4>Por favor complete el formulario</h4></div>
-                                    <div class="card-body">
+                                    <div class="card-header text-success"><h3 class="text-center font-weight-light my-4">Bienvenido</h3><br><h4>Por favor complete el formulario</h4></div>
+                                    <div class="card-body text-success">
                                         <form method="Post" action="../scriptsSQL/updatePassword.php">
                                         <div class="row mb-3">    
                                                 <div class="col-md-6">

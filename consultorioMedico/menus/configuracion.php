@@ -185,7 +185,7 @@
                         <div class="row">
                             <?php while ($row = $resultado->fetch_assoc()) { ?>
                                 <div class="col">
-                                    <div class="card">
+                                    <div class="card bg-success">
                                     <h4 class="card-title"><?php echo '<span>Usuario: </span>'.$row['nombreUsuario']?></h4>
                                         <div class="card-body">
                                             <ul class="list-group list-group-flush">

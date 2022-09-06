@@ -26,9 +26,9 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Nuevo paciente</h3></div>
-                                    <div class="card-body">
+                                <div class="card border-success shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header text-success"><h3 class="text-center font-weight-light my-4">Nuevo paciente</h3></div>
+                                    <div class="card-body text-success">
                                         <form method="Post" action="../scriptsSQL/insertPaciente.php">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
