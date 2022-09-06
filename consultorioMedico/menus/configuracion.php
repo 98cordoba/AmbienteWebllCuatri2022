@@ -142,7 +142,7 @@
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="../principal.php">Principal</a></li>
-                            <li class="breadcrumb-item active">Configuraciones</li>
+                        <li class="breadcrumb-item active">Configuraciones</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
@@ -207,9 +207,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

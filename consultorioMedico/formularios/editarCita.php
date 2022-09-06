@@ -7,7 +7,6 @@
   #Asignacion de la sesion en Variables
   $tipoUsuario = $_SESSION['rol'];
   $idCita=$_GET['id'];
-  $idPaciente=$_GET['idP'];
   $tCitasSELECT = "SELECT cm.idCita, cm.fechaCita, cm.descripcion, emp.nombreEmpleado FROM cita cm
   JOIN empleados emp on cm.doctorAsignado = emp.idEmpleado WHERE cm.idCita =".$idCita;
 ?>
@@ -39,12 +38,6 @@
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="citaID"
                                                         value="<?php  echo "$idCita"; ?>" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="hidden" placeholder="Enter your first name" name="PacienteID"
-                                                        value="<?php  echo "$idPaciente"; ?>" />
                                                     </div>
                                                 </div>
                                             </div>  
@@ -85,7 +78,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="../tablas/tablaCitas.php">Buscar una Cita</a></div>
+                                        <div class="small"><a href="../tablas/tablaCitas.php">Cancelar</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -99,9 +92,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

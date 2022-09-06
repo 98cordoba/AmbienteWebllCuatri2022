@@ -124,7 +124,7 @@ CREATE PROCEDURE `consultoriomedico`.`spActualizaEmpleado`(in pnombreEmpleado va
 END$$
             /* CITAS */
 DROP PROCEDURE IF EXISTS `consultoriomedico`.`spActualizaCita`$$
-CREATE PROCEDURE `consultoriomedico`.`spActualizaCita`(in pfechaCita varchar(10), in pdescripcion VARCHAR(45), in pdoctorAsignado int ,in pidPaciente int)
+CREATE PROCEDURE `consultoriomedico`.`spActualizaCita`(in pfechaCita varchar(10), in pdescripcion VARCHAR(45), in pdoctorAsignado int,in pidCita int)
     BEGIN
 	update cita 
             set fechaCita        = pfechaCita, 

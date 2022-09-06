@@ -108,50 +108,17 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
                 </footer>
             </div>
         </div>
-<<<<<<< HEAD
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
         <script src="../js/validaciones.js"></script>
-=======
-        
-        <script>
-            $(document).ready(function () {
-    cargaRoles();
-
-});//(document).ready ==============================
-
-function cargaRoles() { //Inicio funcion carga roles
-    try {
-        $.ajax({
-            url: '../gets/getRoles.php'
-        }).done(function (data) {
-                LlenaRolesJson(data);
-            });
-    } catch (err) {
-        alert(err);
-    } 
-}//Fin cargaRoles ==============================================
-function LlenaRolesJson(TextoJSON) { //Inicio funcion llenar roles
-    var elValor;
-    var elHTML;
-    var ObjetoJSON = JSON.parse(TextoJSON); 
-    for (i = 0; i < ObjetoJSON.length; i++) {
-        elValor = ObjetoJSON[i].id;
-        elHTML = ObjetoJSON[i].nombre;
-        $('#rolTrabajo').append($('<option></option>').val(elValor).html(elHTML));
-    }
-}//Fin LlenaDiasJson ================================================
-
-        </script>
->>>>>>> 6a40a144e1f5d6c7feba682f6026b5817f2d1715
     </body>
 </html>

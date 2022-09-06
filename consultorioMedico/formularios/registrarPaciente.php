@@ -87,6 +87,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
+                                        <div class="small"><a href="../principal.php">Regresar</a></div>
                                         <div class="small"><a href="../tablas/tablaPacientes.php">Buscar un paciente</a></div>
                                     </div>
                                 </div>
@@ -101,9 +102,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
