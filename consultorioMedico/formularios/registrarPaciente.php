@@ -19,7 +19,7 @@
         <link href="../css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-success">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -82,13 +82,13 @@
                                                                                                  
                                             </div>                                            
                                             <div class="mt-4 mb-0">
-                                                <div class="d-grid"><button type="submit" class="btn btn-primary btn-block" onclick="return validarUsuario();">Registrar Paciente</button ></div>
+                                                <div class="d-grid"><button type="submit" class="btn btn-success btn-block" onclick="return validarUsuario();">Registrar Paciente</button></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="../principal.php">Regresar</a></div>
-                                        <div class="small"><a href="../tablas/tablaPacientes.php">Buscar un paciente</a></div>
+                                        <div class="small"><a class="link-success" href="../menus/menuPacientes.php">Regresar</a></div>
+                                        <div class="small"><a class="link-success" href="../tablas/tablaPacientes.php">Buscar un paciente</a></div>
                                     </div>
                                 </div>
                             </div>

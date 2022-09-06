@@ -133,7 +133,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Politicas de Privacidad</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="./principal.php">Principal</a></li>
+                        <li class="breadcrumb-item"><a class="link-success" href="./principal.php">Principal</a></li>
                         <li class="breadcrumb-item active">Politicas de Privacidad</li>
                     </ol>
                     <div class="row">
@@ -192,9 +192,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="./politicas.php">Privacy Policy</a>
+                                <a class="link-success" href="./politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="./terminos.php">Terminos &amp; Condiciones</a>
+                                <a class="link-success" href="./terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

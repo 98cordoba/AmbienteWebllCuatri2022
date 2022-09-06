@@ -133,7 +133,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Terminos y Condiciones</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="./principal.php">Principal</a></li>
+                        <li class="breadcrumb-item"><a class="link-success" href="./principal.php">Principal</a></li>
                         <li class="breadcrumb-item active">Terminos y condiciones</li>
                     </ol>
                     <div class="row">
@@ -150,7 +150,7 @@
                                     revisar la copia de su contrato o contactar directamente a un compañero 
                                     del departamento de Recursos Humanos o con su supervisor en turno. <br> Gracias
                                 </p>
-                                <a href="./principal.php" class="card-link">Regresar</a>
+                                <a class="link-success" href="./principal.php" class="card-link">Regresar</a>
                                 </div>
                             </div>
                         </div>
@@ -162,9 +162,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="">Privacy Policy</a>
+                                <a class="link-success" href="">Privacy Policy</a>
                                 &middot;
-                                <a href="./terminos.php">Terminos &amp; Condiciones</a>
+                                <a class="link-success" href="./terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

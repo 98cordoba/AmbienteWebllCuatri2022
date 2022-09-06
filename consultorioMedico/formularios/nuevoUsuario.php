@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../js/jquery-ui-1.12.1/jquery-ui.css">
         <script src="../js/carga.js"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-success">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -57,12 +57,12 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                            <button type="submit" class="btn btn-primary" >Registrar</button>
+                                            <div class="d-grid"><button type="submit" class="btn btn-success">Registrar</button></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="../principal.php">Regresar</a></div>
+                                        <div class="small"><a class="link-success" href="../menus/menuUsuarios.php">Regresar</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -76,9 +76,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="../politicas.php">Privacy Policy</a>
+                                <a class="link-success" href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
+                                <a class="link-success" href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

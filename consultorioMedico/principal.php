@@ -44,7 +44,7 @@
                             <div class="sb-sidenav-menu-heading">Menus</div>
                             <a class="nav-link" href="principal.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Princial
+                                Principal
                             </a>
                             <a class="nav-link" href="./menus/menuCitas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-medical"></i></div>
@@ -137,7 +137,7 @@
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Pacientes</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="./menus/menuPacientes.php">Menu</a>
@@ -146,7 +146,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Empleados</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="./menus/menuEmpleados.php">Menu</a>
@@ -155,7 +155,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Citas</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="./menus/menuCitas.php">Menu</a>
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Usuarios</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="./menus/menuUsuarios.php">Menu</a>
@@ -180,9 +180,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="./politicas.php">Privacy Policy</a>
+                                <a class="link-success" href="./politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="./terminos.php">Terminos &amp; Condiciones</a>
+                                <a class="link-success" href="./terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

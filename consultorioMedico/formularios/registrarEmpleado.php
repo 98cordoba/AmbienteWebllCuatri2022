@@ -30,7 +30,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
     </head>
-    <body class="bg-primary">
+    <body class="bg-success">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -88,13 +88,13 @@
                                                 <label for="inputCorreo">Email address</label>
                                             </div>
                                             <div class="mt-4 mb-0">
-                                            <button type="submit" class="btn btn-primary" onclick="return validarEmpleado();">Registrar Empleado</button>
+                                            <div class="d-grid"><button type="submit" class="btn btn-success" onclick="return validarEmpleado();">Registrar Empleado</button></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="../menus/menuEmpleados.php">Regresar</a></div>
-                                        <div class="small"><a href="../tablas/tablaEmpleados.php">Buscar Empleado</a></div>
+                                        <div class="small"><a class="link-success" href="../menus/menuEmpleados.php">Regresar</a></div>
+                                        <div class="small"><a class="link-success" href="../tablas/tablaEmpleados.php">Buscar Empleado</a></div>
                                     </div>
                                 </div>
                             </div>

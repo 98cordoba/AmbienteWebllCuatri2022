@@ -142,8 +142,8 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Empleados</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="../principal.php">Principal</a></li>
-                            <li class="breadcrumb-item"><a href="../menus/menuEmpleados.php">Empleados</a></li>
+                            <li class="breadcrumb-item"><a class="link-success" href="../principal.php">Principal</a></li>
+                            <li class="breadcrumb-item"><a class="link-success" href="../menus/menuEmpleados.php">Empleados</a></li>
                             <li class="breadcrumb-item active">Tabla de Empleados</li>
                         </ol>
                         <div class="card mb-4">
@@ -157,7 +157,7 @@
                                 Doctores
                             </div>
                             <div class="card-body"> <!-- Contenido Tabla Doctores -->
-                                <table id="datatablesSimple" class="table table-dark table-striped table-borderless">
+                                <table id="datatablesSimple" class="table table-success table-striped table-borderless">
                                     <thead>
                                         <tr>
 
@@ -206,9 +206,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="../politicas.php">Privacy Policy</a>
+                                <a class="link-success" href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
+                                <a class="link-success" href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>

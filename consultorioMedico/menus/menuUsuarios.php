@@ -133,12 +133,12 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Usuarios</h1>
                         <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="../principal.php">Principal</a></li>
+                        <li class="breadcrumb-item"><a class="link-success" href="../principal.php">Principal</a></li>
                         <li class="breadcrumb-item active">Menu Usuarios</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Principal</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="../principal.php">Regresar</a>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Nuevo Usuario</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="../formularios/nuevoUsuario.php">Crear</a>
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
+                                <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Buscar Usuario</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="../tablas/tablaUsuarios.php">Consultar</a>
@@ -172,9 +172,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="../politicas.php">Privacy Policy</a>
+                                <a class="link-success" href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
+                                <a class="link-success" href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
