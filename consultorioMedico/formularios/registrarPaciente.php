@@ -102,9 +102,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Fidelitas 2022</div>
                             <div>
-                                <a href="../politicas.php">Privacy Policy</a>
+                                <a  class="link-success" href="../politicas.php">Privacy Policy</a>
                                 &middot;
-                                <a href="../terminos.php">Terminos &amp; Condiciones</a>
+                                <a  class="link-success" href="../terminos.php">Terminos &amp; Condiciones</a>
                             </div>
                         </div>
                     </div>
